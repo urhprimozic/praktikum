@@ -1,0 +1,19 @@
+\documentclass[a4paper]{article}
+%newcommand
+\newcommand{\mymacro}{Context of mymacro blabla}
+\newcommand{\withargs}[2]{Uses #1 and uses #2}
+\newcommand{\withdefvalues}[2][TheDefault]{THe Default is #1, the other arg is #2}
+\begin{document}
+\mymacro{}
+
+\withargs{\mymacro}{42}
+
+\withdefvalues{Solata}
+
+\withdefvalues[{\textbf{overriden by balzamični kis}}]{Solata}
+
+
+%Uporavimo %, da pokažemo, da se vrstica tukaj ne prekine
+\withdefvalues[{\textbf{overriden by balzamični kis}}]%
+{Solata}
+\end{document}
