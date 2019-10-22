@@ -1,8 +1,31 @@
 \documentclass[a4paper]{article}
+\usepackage{amsmath}
+\usepackage[utf8]{inputenc}
+\usepackage{amsfonts}
+\usepackage{textcase}
+\usepackage[T1]{fontenc}
+\usepackage[slovene]{babel}
+\usepackage{lmodern}
+\usepackage{xifthen}
+\usepackage{xcolor}
+\usepackage{calc}
+%\usepackage{concrete}
 %newcommand
 \newcommand{\mymacro}{Context of mymacro blabla}
 \newcommand{\withargs}[2]{Uses #1 and uses #2}
-\newcommand{\withdefvalues}[2][TheDefault]{THe Default is #1, the other arg is #2}
+\newcommand{\withdefvalues}[2][TheDefault]{The Default is #1, the other arg is #2}
+%Vsi spodnji ukazi morajo biti znotraj math mode
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\contRR}[1][(\RR^2)]{\mathcal{C}#1}
+%tole je mozn shit
+\newcommand{\cont}[1][none]{\mathcal{C} \ifthenelse{\equal{#1}{none}}{}{#1}}
+\newcommand{\contOn}[2]{([#1,#2])}
+\newcommand{\vectArrow}[1]{\overrightarrow{#1}}
+\newcommand{\vect}[1]{\mathbf{#1}}
+\newcommand{\cmd}[1]{\texttt{\color{blue}{\textbackslash}#1}}
+\newcommand{\demolenght}[1]{\rule{0.1pt}{5pt}\rule{#1}{0.1pt}\rule{0.1pt}{5pt}}
 \begin{document}
 \mymacro{}
 
@@ -12,8 +35,34 @@
 
 \withdefvalues[{\textbf{overriden by balzamični kis}}]{Solata}
 
-
 %Uporavimo %, da pokažemo, da se vrstica tukaj ne prekine
 \withdefvalues[{\textbf{overriden by balzamični kis}}]%
 {Solata}
+
+\begin{abstract}
+    Tukej se začne    
+\end{abstract}
+
+
+$\RR{},\CC{},\NN{},\cont{}$
+
+$\cont[]{} \contOn{0}{1}$
+
+$\vectArrow{AC}, \vect{x}$
+
+$\cont[(\RR)]$
+
+\cmd{cont}
+
+\demolenght{1em}
+ gives \demolenght{6pt}.
+
+ \demolenght{\widthof{\,}}: Prof. A.\,Bauer
+
+ \demolenght{\widthof{\ }}: Prof. A.\ Bauer
+
+ \demolenght{\widthof{~}}: Prof. A.~Bauer
+
+ \demolenght{\widthof{ }}: Prof. A. Bauer
+
 \end{document}
