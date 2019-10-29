@@ -3,6 +3,11 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
+% Paketi za matematiko
+
+\usepackage{amsmath}  % razna okolja za poravnane enačbe ipd.
+\usepackage{amsthm}   % definicije okolij za izreke, definicije, ...
+\usepackage{amssymb}  % dodatni matematični simboli
 \pagestyle{empty}
 \begin{document}
 
@@ -19,77 +24,130 @@ rešljiva natanko tedaj, ko je $Q\subseteq P^c$.
 \end{itemize}
 
 \item Ali obstaja tak izjavni izraz $A$, da bosta izraza
-$(p\wedge A)\vee $ in ??
-enakovredna?
+$(p\wedge A)\vee (p\Rightarrow \neg A)$ in $(p \Rightarrow A)\Rightarrow q$ enakovredna?
 
-Dokaži:
-??
-??
+\item Dokaži:
+\begin{itemize}
+    \item $(A \Rightarrow B) \sim (\neg B \Rightarrow \neg A)$
+\end{itemize}
 
-Poišči preneksno obliko formule ??.
+\item Poišči preneksno obliko formule $\exists x : P(x) \wedge \forall x: Q(x) \Rightarrow \forall x : R(x)$.
 
-Vektorja ?? in ??
-sta pravokotna in imata dolžino 1. Določi kot med vektorjema ?? in ??.
+\item Vektorja $\vec{c} = \vec{a} + 2\vec{b} $ in $\vec{d} = \vec{a}-\vec{b}$
+sta pravokotna in imata dolžino 1. Določi kot med vektorjema $\vec{a}$ in $\vec{b}$.
 
-Določi definicijsko območje funkcije
-??
+\item Določi definicijsko območje funkcije
+%
+\[
+f(x) = \log \frac{x^2+1}{x^2-4x+3}   
+\]
+%
+\item Izračunaj
+%
+\[
+\cos ^2 \frac{3\pi}{8} + \cos ^2 \frac{5~pi}{8}+\cos ^2 \frac{7\pi}{8}+\cos ^2 \frac{8\pi}{8}  
+\]
+%
+\item Dokaži, da za vsa naravna števila $n$ velja:
+%
+\[
+\frac{1}{\sqrt{1}}+\frac{1}{\sqrt{2}}+\ldots+\frac{1}{\sqrt{n}} \ge \sqrt{n}   
+\]
+%
+\item Naj bo $z$ kompleksno število, $z \neq 1$ in $|z|=1$.
+Dokaži, da je število $i\frac{z+1}{z-1}$ realno.
 
-Izračunaj
-??
+\item Pokaži, da je funkcija $x \mapsto \sqrt{x}$ enakomerno zvezna na $[0,\infty)$.
 
-Dokaži, da za vsa naravna števila $n$ velja
-??
+\item Izračunaj limito
+%
+\[
+\lim\limits_{x \to \infty} (\sin \sqrt{x+1}-\sin \sqrt{x})    
+\]
 
-Naj bo ?? kompleksno število, ?? in ??.
-Dokaži, da je število ?? realno.
+\item Dani sta grupi $(G,*)$ in $(H,\circ)$. V množici $G \times H$ definiramo operacijo
+%
+\[
+(g_1,h_1)\cdot (g_2,h_2)=(g_1*g_2,h_1 \circ h_2)   
+\]
+%
+Pokaži, da je množica $G\times H$ grupa za to operacijo.
 
-Pokaži, da je funkcija ?? enakomerno zvezna na ??.
+\item Pokaži, da ima $f(x) = 3x + \sin{(2x)}$ inverzno funkcijo in izračunaj $(f^{-1})(3\pi)$.
 
-Izračunaj limito
-??
+\item Izračunaj integral korenske funkcije
+%Ti komentarji niso potrebni, a jih pišem, da ne pozabim na prazvo vrstico
+\[
+\int \frac{2 + \sqrt{x+1}}{(x+1)^2 - \sqrt{x+1}}dx    
+\]
+%( This comments don't have to be here, but I put them for a reminder. I dont want to remove the empty line.)
+\item Krivulja je podana parametrično z enačbama
+%
+\[
+    x(t)=\int_1^t \frac{\sin{u}}{u^2}du \qquad y(t)=\int_1^t \frac{cos{u}}{u^2}du
+\]
+%
+Izračunaj dolžino poti od točke $x=0$ do točke, v kateri je tangenta prvič navpična.
 
-Dani sta grupi ??. V množici ?? definiramo operacijo
-??
-Pokaži, da je množica ?? grupa za to operacijo.
-
-Pokaži, da ima ?? inverzno funkcijo in izračunaj ??.
-
-Izračunaj integral korenske funkcije
-??
-
-Krivulja je podana parametrično z enačbama
-??
-Izračunaj dolžino poti od točke ?? do točke, v kateri je tangenta prvič navpična.
-
-Naj bo ?? absolutno konvergentna vrsta in ?? za ??.
+\item Naj bo $\sum_{n=1}^\infty a_n$ absolutno konvergentna vrsta in $a_n \neq 1$ za $n \in \mathbb{N}$.
 Dokaži, da sta vrsti
-??
+%
+\[
+    \sum_{n=1}^\infty \frac{a_n}{1+a_n} \qquad \text{in} \qquad \sum_{n=1}^\infty \frac{a_n^2}{1+a_n^2}    
+\]
+%
 absolutno konvergentni.
 
-Funkcijsko zaporedje ?? enakomerno konvergira na ?? proti funkciji ??.
-Naj bo ?? zvezna. Dokaži, da funkcijsko zaporedje ??
-enakomerno konvergina na ?? in določi njegovo limitno funkcijo.
+\item Funkcijsko zaporedje $f_n: [a,b] \rightarrow [c,d]$ enakomerno konvergira na $[a,b]$ proti funkciji $f$.
+Naj bo $g : [c,d] \rightarrow \mathbb{R}$ zvezna. Dokaži, da funkcijsko zaporedje $g \circ f_n$
+enakomerno konvergina na $[a,b]$ in določi njegovo limitno funkcijo.
 
-Izračunaj limito zaporedja
-??
+\item Izračunaj limito zaporedja
+%
+\[
+\lim \limits_{n \to \infty} \frac{\sqrt[3]{n^2 + n -1}+\sqrt[3]{n}+n^2}{2n^2+\sqrt{n}+1}   
+\]
+%
+\item Izračunaj $
+\begin{pmatrix}
+    1 & 2 & 3 & 4 & 5 & 6 \\
+    4 & 5 & 2 & 6 & 3 & 1
+\end{pmatrix}
+^{-2000}
+$
 
-Izračunaj
-??
+\item Poenostavi
+%
+\[
+\frac{\dfrac{3+i}{2-2i}+\dfrac{7i}{1-i}}{1+\dfrac{i-1}{4}-\dfrac{5}{2-3i}}   
+\]
+%
+\item Za dani zaporedji preveri, ali sta konvergentni
+%
+\[
+a_n = \underbrace{\sqrt{2+\sqrt{2+\ldots+\sqrt{2}}}}_{n \text{ korenov}} \qquad b_n=\underbrace{\sin{(\sin{(\ldots \sin{1})})}}_{n \text{ sinusov}}
+\]
+%
+\item Ugotovi, ali obstaja
+%
+\[
+\lim \limits_{y \to 0} y \left(\frac{y+1}{y}-\sqrt{\frac{y^2+1}{y^2}} \right)
+\]
+%
+Pomagaj si z limitama funkcije $\dfrac{x+1-\sqrt{x^2}+1}{x}$ v $-\infty$ in $\infty$.
 
-Poenostavi
-??
-
-Za dani zaporedji preveri, ali sta konvergentni
-??
-
-Ugotovi, ali obstaja
-??
-Pomagaj si z limitama funkcije ?? v ?? in ??.
-
-Izračunaj naslednjo determinanto ??, ki ima na neoznačenih mestih ničle.
-??
-
-Dana je funkcija
+\item Izračunaj naslednjo determinanto $2n\times 2n$, ki ima na neoznačenih mestih ničle.
+%
+\[
+\begin{vmatrix}
+    1 & & & 1 & & & \\
+    & 2 & & 2 & & & \\
+    & & \ddots & \vdots & & & \\
+    1 & 2 & \cdot
+\end{vmatrix}   
+\]
+%
+\item Dana je funkcija
 ??
 Določi parameter ?? tako, da bo ?? zvezna.
 Izračunaj parcialna odvoda ?? in ?? za ??.
@@ -98,13 +156,13 @@ Izračunaj parcialna odvoda ?? in ??.
 ??
 Ali je funkcija ?? diferenciabilna?
 
-Poišči vse rešitve enačbe
+\item Poišči vse rešitve enačbe
 ??
 
-Dokaži binomsko formulo: za vsaki realni števili ?? in ?? in za vsako naravno število ?? velja
+\item Dokaži binomsko formulo: za vsaki realni števili ?? in ?? in za vsako naravno število ?? velja
 ??
 
-Naj bo
+\item Naj bo
 ??
 Pokaži, da je ?? podgrupa v grupi ??
 neničelnih kompleksnih števil za običajno množenje.
@@ -114,7 +172,7 @@ Pokaži, da je preslikava ??, podana s pravilom
 ??
 izomorfizem grup ?? in ??.
 
-Nariši grafe funkcij:
+\item Nariši grafe funkcij:
 ??
 
 \end{enumerate}
