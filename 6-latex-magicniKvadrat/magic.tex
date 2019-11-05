@@ -10,7 +10,7 @@
 \usepackage{graphicx}
 
 
-\begin{document}
+\setlength{\belowcaptionskip}{2mm}
 \parindent = 0mm
 \newcommand{\pojem}[1]{\textsc{\underline{#1}}}
 \newcounter{definicija}
@@ -22,8 +22,16 @@
 \theoremstyle{dokaz}
 \newtheorem*{dokaz}{Dokaz}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newenvironment{Magic}[3]{\begin{table}[h!]
+   \caption{#1}\setlength{\belowcaptionskip}{2mm}
+   \centering
+   \large
+    \label{#3}
+         \begin{tabular}{*#2{|c}|}\hline}{         \end{tabular}
+         \end{table}}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
 \begin{center}
    \LARGE{\textbf{Magični kvadrati}}
 \end{center}
@@ -52,16 +60,18 @@ stolpca ali vsa števila v katerikoli od glavnih diagonal.
 
 Primer magičnega kvadrata reda 3 je prikazan v tabeli ??.
 
-Magični kvadrat reda 3
 
-      %8 & 1 & 6 \\\hline
-      %3 & 5 & 7 \\\hline
-      %4 & 9 & 2 \\\hline
+\begin{Magic}{Magični kbvaddrat reda 3}{3}{tbl:kvadrat3}
+   8 & 1 & 6 \\\hline
+   3 & 5 & 7 \\\hline
+   4 & 9 & 2 \\\hline
 
+\end{Magic}
+         
    Magični kvadrat reda ?? je normalen, če v njem nastopajo števila
    ??
 
-Magični kvadrat v tabeli ?? je normalen.
+Magični kvadrat v tabeli~\ref{tbl:kvadrat3} je normalen.
 To je tudi najmanjši netrivialni magični kvadrat.
 Poleg normalnih magičnih kvadratov so zanimivi tudi magični kvadrati praštevil.
 
