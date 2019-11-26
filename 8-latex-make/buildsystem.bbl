@@ -1,0 +1,18 @@
+\begin{thebibliography}{}
+
+\bibitem[{GNU} {Make}, 2019]{gnumake}
+{GNU} {Make} (2019).
+\newblock \url{https://www.gnu.org/software/make/}.
+
+\bibitem[last.fm, 2019a]{lastfm}
+last.fm (2019a).
+\newblock last.fm.
+\newblock \url{https://www.last.fm/}.
+
+\bibitem[last.fm, 2019b]{lastfm:API}
+last.fm (2019b).
+\newblock {L}ast.fm {API}.
+\newblock \url{https://www.last.fm/api/}.
+\newblock Accessed: \formatdate{27}{10}{2019}.
+
+\end{thebibliography}

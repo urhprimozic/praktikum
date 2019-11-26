@@ -1,0 +1,247 @@
+% Predloga za prvi kolokvij iz praktikuma. Urh Primožič
+% Velik delj predloga je povzet iz dokumentov na spletni učilnici FMF.
+\documentclass[a4paper, 12pt]{article}
+%options: <n>pt določa pisavo
+%style: article, report, book
+
+\usepackage[utf8]{inputenc} % vhodna datoteka je kodirana v sistemu UTF-8
+\usepackage[T1]{fontenc}      % izhodna datoteka je kodirana v sistemu T1
+\usepackage[slovene]{babel}   % uporabljamo slovenščino
+%pisave:
+\usepackage{lmodern}            % Boljši fonti, s pravimi šumniki
+% \usepackage{times}            % Times New Roman
+% \usepackage{palatino}         % Palatino
+% \usepackage{concrete}         % Pisava, ki jo je uporabil Donald Knuth v knjigi "Concrete mathematics"
+
+\usepackage{hyperref}            % Paket za povezave znotraj dokumenta in hiper-povezave
+
+%\usepackage{url} % \url{url napišeš sem} naredi url v fancy pisavi. Priporočam uporabo hyperref namesto tega
+\usepackage{amsmath}  % razna okolja za poravnane enačbe ipd.
+\usepackage{amsthm}   % definicije okolij za izreke, definicije, ...
+\usepackage{amssymb}  % dodatni matematični simboli
+\usepackage{graphicx} % slike inb te zadeve
+\usepackage{makeidx} % indexiran kazalo tujk
+\usepackage{tikz} % fancy graik pa to
+\usepackage{array} % komplicirane matrike in to
+
+% Definicija okolij izrek, posledica
+{\theoremstyle{theorem}
+\newtheorem{izrek}{Izrek}[section]
+\newtheorem{posledica}[izrek]{Posledica}
+}
+
+% Definicija okoli za definicije in vaje
+{\theoremstyle{definition}
+\newtheorem{definicija}[izrek]{Definicija}
+\newtheorem{vaja}[izrek]{Vaja}
+}
+
+
+
+%Definicije komand
+\newcommand{\mymacro}{Context of mymacro blabla}
+\newcommand{\withargs}[2]{Uses #1 and uses #2}
+\newcommand{\withdefvalues}[2][TheDefault]{The Default is #1, the other arg is #2}
+%Vsi spodnji ukazi morajo biti znotraj math mode
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\contRR}[1][(\RR^2)]{\mathcal{C}#1}
+%tole je mozn shit
+\newcommand{\cont}[1][{}]{\mathcal{C} \ifthenelse{\equal{#1}{}}{}{#1}}
+\newcommand{\contOn}[2]{([#1,#2])}
+\newcommand{\vectArrow}[1]{\overrightarrow{#1}}
+\newcommand{\vect}[1]{\mathbf{#1}}
+\newcommand{\cmd}[1]{\texttt{\color{blue}{\textbackslash}#1}}
+\newcommand{\demolenght}[1]{\rule{0.1pt}{5pt}\rule{#1}{0.1pt}\rule{0.1pt}{5pt}}
+
+\newcommand{\tx}{\hspace*{0pt}\hfill\verb}
+
+
+
+\title{Zapiski za {\LaTeX}} %Latex{} Nardi fany latex
+% Zgleda da \LaTex{} nagaja. Uporabljaj {\LaTeX}
+\author{Urh Primožič \and Andrej Bauer \and ostali} %Beseda fancy je tuklaj preveč v rabi
+%Itak je vse prekopirano iz gradiva na SU in StackExchanga}
+
+\begin{document}
+
+    \maketitle
+    %Aja, v tekstu se pazi praznih vrstic.
+    \begin{abstract}
+        Tak izgleda izvleček. Če je naslov napisan v \textbf{angleščini}, si verjetno pozabil paket babel.
+    \end{abstract}
+
+    \tx|\tableofcontents|
+    \tableofcontents
+
+    \newpage
+
+    \section{Oblikovanje texta}
+    %section* za brez številke
+    \subsection{Osnovni ukazi za oblikovanje}
+        \begin{itemize}
+            \item \emph{poudarjeno besedilo} \tx|\emph|
+            \item \textbf{krepko} \tx|\textbf{}|
+            \item \emph{\textbf{In zdaj: \textnormal{običajno} znotraj česa } drugega} \tx|\textnormal{}| %Ampak ne delat tega
+            \item \underline{Podčrtano} \tx|\underline{}| 
+            \item \textsf{Sans serifna pisava} \tx|\textsf{}|
+            \item \textsc{Male velike črke} \tx|\textsc{}|
+            \item \textsl{Ležeča} \tx|\textsl{}|
+            \item \texttt{Fiksna širina} \tx|\texttt|
+        \end{itemize}
+    \subsection{Velikosti pisav}
+    Uporavljal \{ \}. 
+    \begin{verbatim}
+        {\Huge Tvoja mama homoseksualna}
+    \end{verbatim}
+    \begin{itemize}
+        \item {\Huge Ogromno}  \tx|{\huge blabla}|
+        \item {\Large Srednje preveliko} \tx|\Large|
+        \item {\tiny Prefukam te za zajtrk majkemi} \tx|\tiny|
+        \item Ostalo: \verb|Huge < hude < LARGE < Large < large < normalsize| 
+        \item \verb|< footnotesize < scriptsize < tiny| 
+    \end{itemize}
+
+    \subsection{Narekovaji}
+    \begin{itemize}
+        \item `$({AltGr}+7)\cdot2$' \tx|`  text  '|
+        \item ``Angleški narekovaji'' \tx|``  text  ''|
+        \item  "> Slovenski tiskani"< \tx|">  text "<|
+        \item "`Slovenski pisani"' \tx|"`  text  "'|
+    \end{itemize}
+    \subsection{Poravnave}
+    \begin{center}
+        Sredinska poravnava.\\
+        \verb|\begin{center}|
+    \end{center}
+    \begin{flushright}
+        Desna poravnava.\\
+        \verb|\begin{flushright}|\\
+        \end{flushright}
+        \begin{flushleft}
+                Simetrični ukaz za levo je \verb|\begin{flushleft}|
+        \end{flushleft}
+    \subsection{Povezave}
+    \emph{Citati in literatura so spodaj}
+        Namesto okolja \textbf{url} rajši uporabljam okolje \textbf{hyperref}, saj ta nudi interaktivne linke.
+        Tako podaš povezavo do spletne strani:
+        \begin{center}
+            \url{https://github.com/urhprimozic} \tx|\url{  }|
+        \end{center}
+        Lahko pa podaš \href{https://github.com/urhprimozic}{povezavo, zamaskirano v besedilo.} \tx|\href{url}{besedilo}|
+    \subsection{Naštevanje}
+    Uporabljaj okolji \textbf{enumerate} in \textbf{itemize}
+    \begin{enumerate}
+        \item gnezdenje \tx|\item|
+        \begin{enumerate}
+            \item in zdj maš črke
+            \item magija
+        \end{enumerate}
+        \item ponovno: magija
+    \end{enumerate}
+    Podobno obstaja okolje \textbf{descritpion}, ki je za moje pojme neuporabno.
+    \begin{description}
+        \item Pojdi domov 
+        \item Jokaj
+        \item Jokaj
+    \end{description}
+
+
+    \section{Matematika}
+    Osnovna orodja nudi paket \textbf{amsmath}. Za dodatne simbole je potrebno poseči po \textbf{amssymb}. Definicije za okolja \emph{lema, dokaz (theorem), ...} nudi paket \textbf{amsthm}.
+    \subsection{Prikazni in vrstični način}
+    To, da naj bo $\epsilon$ poljubno realno število, večje od nič in to, da velja $\psi(x_i)=~\sum \limits_{n=0}^{f(x_i+1)}a_n$ lahko zapišeš v eni vrsti s pomočjo \$.
+    \\ \tx|$\psi(x_i)=~\sum \limits_{n=0}^{f(x_i+1)}a_n$|
+    Stvari lahko pišeš tudi v svoj odstavek. Torej:
+    %
+    \[
+        \lim \limits_{x \Rightarrow \infty} \left( \underbrace{\sqrt[n]{x+\sqrt[n]{x+ \ldots + \sqrt[n]{x+\sqrt[n]t{n}}}}}_{n-\text{korenov}} \right) \qquad \cap \mathbb{A}=\zeta(\{1,2,3,4,5,6,7 \})
+    \]
+    %
+    NE DELAJ PRAZNIH VRSTIC za matematiko. (Dobra praksa: zakomentiraj vrstico pred in za matematiko.)
+    {\small
+    \begin{verbatim}
+        %
+    \[
+        \lim \limits_{x \Rightarrow \infty} \left( \underbrace{\sqrt[n]{x+\sqrt[n]
+        {x+ \ldots + \sqrt[n]{x+\sqrt[n]t{n}}}}}_{n-\text{korenov}} \right) 
+        \qquad \cap \mathbb{A}=\zeta(\{1,2,3,4,5,6,7 \})
+    \]
+    %
+    \end{verbatim}}
+    Seveda pa je vedno bolj zaželjeno uporabljati okolja AMS.
+    \subsection{Okolja AMS}
+    \subsubsection{Equation}
+    Equation poravna formulo sredinsko. \verb|begin{equation*}| ne oštevilči enačbe.
+    \begin{equation}
+        \label{eq:vsota-kvadratov}
+        x^2 + y^2 = 1
+      \end{equation}
+    \begin{verbatim}
+        \begin{equation}
+            \label{eq:vsota-kvadratov}  %S TEM SE BOŠ SKLICEVAL NA ENAČBO
+            x^2 + y^2 = 1
+          \end{equation}
+    \end{verbatim}
+    Klic na enačbo~\eqref{eq:vsota-kvadratov} dobiš z \tx|\eqref{ label }|
+    \subsubsection{Gather}
+    Z \texttt{gather} postavimo izraze enega pod drugega.
+    \begin{gather}
+        \log 2 = 1 - \frac{1}{2} + \frac{1}{3} - \frac{1}{4} + \cdots, \\
+        \frac{2}{\frac{1}{x} + \frac{1}{y}} \leq \sqrt{x y} \leq \frac{x + y}{2}, \\
+        \sum_{k = 1}^\infty \frac{1}{k^2} = \frac{\pi^2}{6}.
+      \end{gather}
+      Enako velja, da uporabi $*$ za brez oštevi+lčenja.
+      \subsubsection{Multiline}
+      Ko imaš rad bralca, mu daš izpeljavo čez več vrstic. To storiš z okoljem \texttt{multline}.Prva vrstica je
+      poravnana levo, zadnja desno in vsem vmesne sredinsko.
+      \begin{multline*}
+        \sum_{i=1}^n x_i^2 \cdot \sum_{i=1}^n y_i^2
+        - \left( \sum_{i=1}^n x_i y_i \right)^2 = \\
+        \frac{1}{2} \cdot \sum_{i=1}^n x_i^2 \cdot \sum_{i=1}^n y_i^2
+        +
+        \frac{1}{2} \cdot \sum_{i=1}^n x_i^2 \cdot \sum_{i=1}^n y_i^2
+        -
+        \sum_{i=1}^n x_i y_i \cdot \sum_{j=1}^n x_j y_j = \\
+        \frac{1}{2} \cdot \sum_{i,j=1}^2 x_i^2 y_j^2
+        +
+        \frac{1}{2} \cdot \sum_{i,j=1}^n x_j^2 y_i^2
+        -
+        \sum_{i,j=1}^n x_i y_j x_j y_i = \\
+        \sum_{i,j=1}^n \frac{1}{2}\,
+        \left(
+          x_i^2 y_j^2 + x_j^2 x_i^2 - 2 x_i y_j x_j y_i
+        \right)
+        =
+        \sum_{i,j=1}^n \frac{1}{2}\,
+        \left(
+          x_i y_j - x_j y_i
+        \right)^2
+        \geq 0.
+      \end{multline*}
+      \subsubsection{Align}
+      Z okoljem \texttt{align} lahko poravnamo vrstice na določen znaku. Mesto, kjer morajo biti
+      vrstice poravnane, označimo z znakom \texttt{\&}, prehod v novo vrsto označimo z \verb|\\|:
+      %
+\begin{align*}
+    (x + y)^2 - (x - y)^2
+    &= (x^2 + 2 x y + y^2) - (x^2 - 2 x y + y^2) \\
+    \intertext{in zato}
+    &= x^2 + 2 x y + y^2 - x^2 + 2 x y - y^2 \\
+    &= 2 x y + 2 x y \\
+    &= 4 x y.
+  \end{align*}
+  %
+  Pa ne dat \verb|\\| na konc.
+  \begin{verbatim}
+    \begin{align*}
+        (x + y)^2 - (x - y)^2
+        &= (x^2 + 2 x y + y^2) - (x^2 - 2 x y + y^2) \\
+        \intertext{in zato}
+        &= x^2 + 2 x y + y^2 - x^2 + 2 x y - y^2 \\
+        &= 2 x y + 2 x y \\
+        &= 4 x y.
+      \end{align*}
+  \end{verbatim}
+\end{document}

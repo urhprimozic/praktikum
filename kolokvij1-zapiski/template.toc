@@ -1,0 +1,15 @@
+\babel@toc {slovene}{}
+\contentsline {section}{\numberline {1}Oblikovanje texta}{2}{section.1}
+\contentsline {subsection}{\numberline {1.1}Osnovni ukazi za oblikovanje}{2}{subsection.1.1}
+\contentsline {subsection}{\numberline {1.2}Velikosti pisav}{2}{subsection.1.2}
+\contentsline {subsection}{\numberline {1.3}Narekovaji}{2}{subsection.1.3}
+\contentsline {subsection}{\numberline {1.4}Poravnave}{3}{subsection.1.4}
+\contentsline {subsection}{\numberline {1.5}Povezave}{3}{subsection.1.5}
+\contentsline {subsection}{\numberline {1.6}Na\IeC {\v s}tevanje}{3}{subsection.1.6}
+\contentsline {section}{\numberline {2}Matematika}{3}{section.2}
+\contentsline {subsection}{\numberline {2.1}Prikazni in vrsti\IeC {\v c}ni na\IeC {\v c}in}{4}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}Okolja AMS}{4}{subsection.2.2}
+\contentsline {subsubsection}{\numberline {2.2.1}Equation}{4}{subsubsection.2.2.1}
+\contentsline {subsubsection}{\numberline {2.2.2}Gather}{5}{subsubsection.2.2.2}
+\contentsline {subsubsection}{\numberline {2.2.3}Multiline}{5}{subsubsection.2.2.3}
+\contentsline {subsubsection}{\numberline {2.2.4}Align}{5}{subsubsection.2.2.4}
