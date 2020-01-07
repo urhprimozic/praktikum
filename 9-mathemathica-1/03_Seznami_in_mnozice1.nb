@@ -1,0 +1,3481 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 6.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[     97365,       3473]
+NotebookOptionsPosition[     80023,       2869]
+NotebookOutlinePosition[     80783,       2894]
+CellTagsIndexPosition[     80740,       2891]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Seznami in mno\[ZHacek]ice", "Title",
+ CellChangeTimes->{{3.4085221351875*^9, 3.4085221390625*^9}, {
+  3.408522309453125*^9, 3.40852233303125*^9}}],
+
+Cell["\<\
+Povzeto po: Bor Plestenjak: Te\[CHacek]aj iz mathematice 2. del
+Priredila: Alen Orbani\[CAcute], Matja\[ZHacek] \[CapitalZHacek]eljko \
+\>", "Subsubtitle",
+ CellChangeTimes->{{3.4085221498125*^9, 3.408522183921875*^9}, 
+   3.4085222375625*^9, {3.408522301140625*^9, 3.408522302234375*^9}, 
+   3.5346292543777266`*^9}],
+
+Cell[CellGroupData[{
+
+Cell["Seznami", "Section",
+ Evaluatable->False,
+ CellHorizontalScrolling->False],
+
+Cell[CellGroupData[{
+
+Cell["Uvod", "Subsection",
+ Evaluatable->False,
+ CellHorizontalScrolling->False],
+
+Cell[TextData[{
+ "Seznam v ",
+ StyleBox["Mathematici",
+  FontSlant->"Italic"],
+ " je poljubno kon\[CHacek]no \[SHacek]tevilo izrazov, lo\[CHacek]enih z \
+vejicami, ki jih na\[SHacek]tejemo med zavitimi oklepaji. Seznami so znotraj ",
+ StyleBox["Mathematice",
+  FontSlant->"Italic"],
+ " predstavljeni z glavo ",
+ StyleBox["List",
+  FontWeight->"Bold"],
+ " s poljubnim \[SHacek]tevilom argumentov. ",
+ StyleBox["List",
+  FontWeight->"Bold"],
+ " lahko uporabljamo tudi kot funkcijo s poljubnim \[SHacek]tevilom \
+argumentov, ki zgradi seznam iz svojih argumentov."
+}], "Text",
+ Evaluatable->False,
+ CellChangeTimes->{{3.406958004828125*^9, 3.4069580270625*^9}, {
+  3.406958318796875*^9, 3.406958325015625*^9}, {3.534629276760007*^9, 
+  3.5346292773360395`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"1", ",", "3", ",", "5"}], "}"}]], "Input",
+ CellChangeTimes->{{3.6914643075763187`*^9, 3.691464310608492*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"1", ",", "3", ",", "5"}], "}"}]], "Output",
+ CellChangeTimes->{3.691464312010572*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["List[1,3,5]", "Input",
+ PageWidth->Infinity],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"1", ",", "3", ",", "5"}], "}"}]], "Output",
+ CellChangeTimes->{3.6914597805693884`*^9}]
+}, Open  ]],
+
+Cell["\<\
+Kot ka\[ZHacek]e naslednji primer, so elementi seznama lahko poljubni izrazi, \
+lahko so razli\[CHacek]nih tipov in prav tako so lahko spet seznami.\
+\>", "Text",
+ Evaluatable->False,
+ CellChangeTimes->{{3.406958301671875*^9, 3.40695831246875*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["sez={1,\"abc\",Pi,7.17,{1,2,4}}", "Input",
+ PageWidth->Infinity,
+ CellChangeTimes->{{3.56389043024341*^9, 3.563890430532427*^9}, {
+  3.5638904893087883`*^9, 3.5638904893917933`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"1", ",", "\<\"abc\"\>", ",", "\[Pi]", ",", "7.17`", ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "2", ",", "4"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.69145978741278*^9}]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Osnovni ukazi za delo s seznami", "Subsection",
+ Evaluatable->False,
+ CellHorizontalScrolling->False],
+
+Cell[CellGroupData[{
+
+Cell["Length[s]", "Subsubsection",
+ Evaluatable->False,
+ CellHorizontalScrolling->False],
+
+Cell[TextData[{
+ StyleBox["Length",
+  FontWeight->"Bold"],
+ " vrne dol\[ZHacek]ino seznama ",
+ StyleBox["s",
+  FontWeight->"Bold"],
+ "."
+}], "Text",
+ Evaluatable->False,
+ CellChangeTimes->{{3.406958297*^9, 3.406958297953125*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Length[sez]", "Input",
+ PageWidth->Infinity],
+
+Cell[BoxData["5"], "Output",
+ CellChangeTimes->{3.691459847957243*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Part[s,i]", "Subsubsection",
+ Evaluatable->False,
+ CellHorizontalScrolling->False],
+
+Cell[TextData[{
+ StyleBox["Part",
+  FontWeight->"Bold"],
+ " vrne ",
+ StyleBox["i",
+  FontSlant->"Italic"],
+ "-ti element seznama ",
+ StyleBox["s",
+  FontWeight->"Bold",
+  FontSlant->"Italic"],
+ ". Namesto tega lahko ",
+ StyleBox["i",
+  FontSlant->"Italic"],
+ "-ti element dobimo tudi kot ",
+ StyleBox["s[[i]]", "Input",
+  FontWeight->"Bold"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.406958367203125*^9, 3.406958373078125*^9}, 
+   3.408520286109375*^9}],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Part[sez,3]
+sez[[3]]\
+\>", "Input",
+ PageWidth->Infinity,
+ CellChangeTimes->{{3.5638904011887484`*^9, 3.563890401978793*^9}, {
+  3.563890434654662*^9, 3.563890440615003*^9}, {3.56389049283099*^9, 
+  3.5638904959991713`*^9}}],
+
+Cell[BoxData["\[Pi]"], "Output",
+ CellChangeTimes->{3.691459852123481*^9}],
+
+Cell[BoxData["\[Pi]"], "Output",
+ CellChangeTimes->{3.691459852126481*^9}]
+}, Open  ]],
+
+Cell[TextData[{
+ "\[CapitalCHacek]e podamo zaporedje indeksov ",
+ StyleBox["i",
+  FontSlant->"Italic"],
+ ", ",
+ StyleBox["j,...",
+  FontSlant->"Italic"],
+ ", se obravnava naslednji indeks ",
+ StyleBox["j",
+  FontSlant->"Italic"],
+ " kot indeks za morebitni seznam, ki bi se pojavil v za\[CHacek]etnem \
+seznamu na ",
+ StyleBox["i",
+  FontSlant->"Italic"],
+ "-tem mestu. Torej lahko namesto ",
+ StyleBox["s[[i]][[j]]", "Input"],
+ " pi\[SHacek]emo ",
+ StyleBox["s[[i,j]]", "Input"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.40852006984375*^9, 3.408520191546875*^9}, 
+   3.563890693737481*^9, {3.5638907550769897`*^9, 3.563890779720399*^9}, 
+   3.563890878063024*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{"sez", "\[IndentingNewLine]", 
+ RowBox[{"sez", "[", 
+  RowBox[{"[", 
+   RowBox[{"5", ",", "3"}], "]"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"sez", "[", 
+   RowBox[{"[", "5", "]"}], "]"}], "[", 
+  RowBox[{"[", "3", "]"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.408520101421875*^9, 3.408520105328125*^9}, {
+  3.563890414241495*^9, 3.56389043845888*^9}, {3.5638904976422653`*^9, 
+  3.563890499000343*^9}, {3.563890602142242*^9, 3.5638906731523037`*^9}, {
+  3.5638907256953087`*^9, 3.5638907298485465`*^9}, {3.6914598973600683`*^9, 
+  3.691459899797208*^9}, {3.69145992990693*^9, 3.6914599346632023`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"1", ",", "\<\"abc\"\>", ",", "\[Pi]", ",", "7.17`", ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "2", ",", "4"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.691459865797263*^9, 3.6914599023033514`*^9, 
+  3.6914599376783743`*^9}],
+
+Cell[BoxData["4"], "Output",
+ CellChangeTimes->{3.691459865797263*^9, 3.6914599023033514`*^9, 
+  3.691459937684375*^9}],
+
+Cell[BoxData["4"], "Output",
+ CellChangeTimes->{3.691459865797263*^9, 3.6914599023033514`*^9, 
+  3.691459937689375*^9}]
+}, Open  ]],
+
+Cell["\<\
+\[CapitalCHacek]e podamo seznam indeksov, je rezultat seznam elementov na teh \
+indeksih. \
+\>", "Text",
+ CellChangeTimes->{{3.408520226890625*^9, 3.40852025890625*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+sez
+sez[[{1,3}]]\
+\>", "Input",
+ PageWidth->Infinity,
+ CellChangeTimes->{{3.691459976562598*^9, 3.6914599783006983`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"1", ",", "\<\"abc\"\>", ",", "\[Pi]", ",", "7.17`", ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "2", ",", "4"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{{3.691459970578256*^9, 3.691459979822785*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"1", ",", "\[Pi]"}], "}"}]], "Output",
+ CellChangeTimes->{{3.691459970578256*^9, 3.691459979826785*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"sez", "=", 
+  RowBox[{"{", 
+   RowBox[{"1", ",", "2", ",", "3", ",", "4", ",", "5"}], "}"}]}]], "Input",
+ CellChangeTimes->{{3.6914603352701154`*^9, 3.6914603463227477`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"1", ",", "2", ",", "3", ",", "4", ",", "5"}], "}"}]], "Output",
+ CellChangeTimes->{3.6914603473498063`*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["First[s]", "Subsubsection",
+ Evaluatable->False,
+ CellHorizontalScrolling->False],
+
+Cell[TextData[{
+ StyleBox["First",
+  FontWeight->"Bold"],
+ " vrne prvi element seznama ",
+ StyleBox["s",
+  FontWeight->"Bold"],
+ "."
+}], "Text",
+ Evaluatable->False],
+
+Cell[CellGroupData[{
+
+Cell["First[sez]", "Input",
+ PageWidth->Infinity],
+
+Cell[BoxData["1"], "Output",
+ CellChangeTimes->{3.691459988950307*^9, 3.691460350931011*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Last[s]", "Subsubsection",
+ Evaluatable->False,
+ CellHorizontalScrolling->False,
+ CellChangeTimes->{{3.691460358941469*^9, 3.6914603643887806`*^9}}],
+
+Cell[TextData[{
+ StyleBox["Last",
+  FontWeight->"Bold"],
+ " vrne zadnji element seznama ",
+ StyleBox["s",
+  FontWeight->"Bold"],
+ "."
+}], "Text",
+ Evaluatable->False],
+
+Cell[CellGroupData[{
+
+Cell["Last[sez]", "Input",
+ PageWidth->Infinity],
+
+Cell[BoxData["5"], "Output",
+ CellChangeTimes->{3.6914599924155054`*^9, 3.691460374444356*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Rest[s]", "Subsubsection",
+ Evaluatable->False,
+ CellHorizontalScrolling->False],
+
+Cell[TextData[{
+ StyleBox["Rest",
+  FontWeight->"Bold"],
+ " vrne seznam ",
+ StyleBox["s",
+  FontWeight->"Bold"],
+ " brez prvega elementa."
+}], "Text",
+ Evaluatable->False],
+
+Cell[CellGroupData[{
+
+Cell["Rest[sez]", "Input",
+ PageWidth->Infinity,
+ CellChangeTimes->{{3.691460011125575*^9, 3.6914600122476397`*^9}, {
+  3.6914603794046392`*^9, 3.691460380605708*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"2", ",", "3", ",", "4", ",", "5"}], "}"}]], "Output",
+ CellChangeTimes->{{3.6914600031751204`*^9, 3.691460013537713*^9}, 
+   3.691460382428813*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Take[s,k]", "Subsubsection",
+ Evaluatable->False,
+ CellHorizontalScrolling->False],
+
+Cell[TextData[{
+ StyleBox["Take",
+  FontWeight->"Bold"],
+ " vrne seznam prvih ",
+ StyleBox["k",
+  FontWeight->"Bold"],
+ " elementov seznama ",
+ StyleBox["s",
+  FontWeight->"Bold"],
+ ", \[CHacek]e je ",
+ StyleBox["k",
+  FontWeight->"Bold"],
+ " pozitiven, oziroma zadnjih ",
+ StyleBox["k",
+  FontWeight->"Bold"],
+ ", \[CHacek]e je ",
+ StyleBox["k",
+  FontWeight->"Bold"],
+ " negativen."
+}], "Text",
+ Evaluatable->False,
+ CellChangeTimes->{{3.40852032909375*^9, 3.40852033675*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Take[sez,2]
+Take[sez,-2]\
+\>", "Input",
+ PageWidth->Infinity,
+ CellChangeTimes->{{3.5638909209895215`*^9, 3.5638909217539234`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"1", ",", "2"}], "}"}]], "Output",
+ CellChangeTimes->{3.6914600182709837`*^9, 3.691460438471018*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"4", ",", "5"}], "}"}]], "Output",
+ CellChangeTimes->{3.6914600182709837`*^9, 3.6914604384770184`*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Drop[s, k]", "Subsubsection",
+ Evaluatable->False,
+ CellHorizontalScrolling->False,
+ CellChangeTimes->{3.408520538578125*^9}],
+
+Cell[TextData[{
+ StyleBox["Drop",
+  FontWeight->"Bold"],
+ " vrne seznam s brez prvih ",
+ StyleBox["k",
+  FontWeight->"Bold"],
+ " elementov, \[CHacek]e je ",
+ StyleBox["k",
+  FontWeight->"Bold"],
+ " pozitiven, oziroma brez zadnjih ",
+ StyleBox["k",
+  FontWeight->"Bold"],
+ ", \[CHacek]e je ",
+ StyleBox["k",
+  FontWeight->"Bold"],
+ " negativen."
+}], "Text",
+ Evaluatable->False,
+ CellChangeTimes->{{3.40695839753125*^9, 3.40695840940625*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Drop[sez,2]
+Drop[sez,-2]\
+\>", "Input",
+ PageWidth->Infinity,
+ CellChangeTimes->{{3.563890933266743*^9, 3.563890937494351*^9}, {
+  3.6914600488307323`*^9, 3.6914600497777863`*^9}, {3.6914604519747906`*^9, 
+  3.691460452718833*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"3", ",", "4", ",", "5"}], "}"}]], "Output",
+ CellChangeTimes->{3.6914600509488535`*^9, 3.691460453816896*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"1", ",", "2", ",", "3"}], "}"}]], "Output",
+ CellChangeTimes->{3.6914600509488535`*^9, 3.691460453822896*^9}]
+}, Open  ]]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Generiranje seznamov", "Subsection",
+ Evaluatable->False,
+ CellHorizontalScrolling->False,
+ CellChangeTimes->{{3.40695845125*^9, 3.406958451859375*^9}, {
+  3.408554060125*^9, 3.40855406496875*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Range[min, max, korak]", "Subsubsection",
+ Evaluatable->False,
+ CellHorizontalScrolling->False,
+ CellChangeTimes->{{3.40852052684375*^9, 3.408520527703125*^9}}],
+
+Cell[TextData[{
+ StyleBox["Range",
+  FontWeight->"Bold"],
+ " vrne aritmeti\[CHacek]no zaporedje \[SHacek]tevil s korakom ",
+ StyleBox["korak",
+  FontSlant->"Italic"],
+ ", ki se za\[CHacek]ne z ",
+ StyleBox["min",
+  FontSlant->"Italic"],
+ ", elementi pa so manj\[SHacek]i ali enaki ",
+ StyleBox["max",
+  FontSlant->"Italic"],
+ ". V primeru dveh argumentov ",
+ StyleBox["min",
+  FontSlant->"Italic"],
+ ", ",
+ StyleBox["max",
+  FontSlant->"Italic"],
+ " dobimo seznam naravnih \[SHacek]tevil med ",
+ StyleBox["min",
+  FontSlant->"Italic"],
+ " in ",
+ StyleBox["max",
+  FontSlant->"Italic"],
+ ". V primeru enega samega argumenta ",
+ StyleBox["max",
+  FontSlant->"Italic"],
+ " dobimo kar seznam naravnih \[SHacek]tevil od 1 do ",
+ StyleBox["max",
+  FontSlant->"Italic"],
+ "."
+}], "Text",
+ Evaluatable->False,
+ CellChangeTimes->{{3.40695847053125*^9, 3.406958489609375*^9}, {
+  3.408520493875*^9, 3.408520501390625*^9}, {3.5354737121104736`*^9, 
+  3.5354737378529463`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Range[15]
+Range[5, 15]
+Range[5, 15, 4]
+Range[5, 17, 4]\
+\>", "Input",
+ PageWidth->Infinity,
+ CellChangeTimes->{{3.535473745581388*^9, 3.535473756653021*^9}, {
+  3.535473787356777*^9, 3.5354737875647893`*^9}, {3.563890968928406*^9, 
+  3.563890976432019*^9}, {3.563891033450119*^9, 3.5638910359149237`*^9}, {
+  3.6914605444230785`*^9, 3.691460563057144*^9}, {3.6914605964860563`*^9, 
+  3.6914606130270023`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "1", ",", "2", ",", "3", ",", "4", ",", "5", ",", "6", ",", "7", ",", "8", 
+   ",", "9", ",", "10", ",", "11", ",", "12", ",", "13", ",", "14", ",", 
+   "15"}], "}"}]], "Output",
+ CellChangeTimes->{3.6914605300352554`*^9, 3.6914605684254513`*^9, 
+  3.6914606141020637`*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "5", ",", "6", ",", "7", ",", "8", ",", "9", ",", "10", ",", "11", ",", 
+   "12", ",", "13", ",", "14", ",", "15"}], "}"}]], "Output",
+ CellChangeTimes->{3.6914605300352554`*^9, 3.6914605684254513`*^9, 
+  3.6914606141080637`*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"5", ",", "9", ",", "13"}], "}"}]], "Output",
+ CellChangeTimes->{3.6914605300352554`*^9, 3.6914605684254513`*^9, 
+  3.6914606141120644`*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"5", ",", "9", ",", "13", ",", "17"}], "}"}]], "Output",
+ CellChangeTimes->{3.6914605300352554`*^9, 3.6914605684254513`*^9, 
+  3.6914606141170645`*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Table[izr, {i, min, max, korak}]", "Subsubsection",
+ Evaluatable->False,
+ CellHorizontalScrolling->False,
+ CellChangeTimes->{{3.408520520125*^9, 3.408520523828125*^9}}],
+
+Cell[TextData[{
+ StyleBox["Table",
+  FontWeight->"Bold"],
+ " tabelira izraz ",
+ StyleBox["izr",
+  FontSlant->"Italic"],
+ " pri vrednostih iteratorja ",
+ StyleBox["i",
+  FontSlant->"Italic"],
+ ". Argumenti ",
+ StyleBox["min",
+  FontSlant->"Italic"],
+ ", ",
+ StyleBox["max",
+  FontSlant->"Italic"],
+ " in korak imajo enak pomen kot pri ukazu ",
+ StyleBox["Range",
+  FontWeight->"Bold"],
+ " in spet ni nujno pisati vseh argumentov, \[CHacek]e to ni potrebno. "
+}], "Text",
+ Evaluatable->False,
+ CellChangeTimes->{{3.40695855865625*^9, 3.40695855934375*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Table[Sin[k Pi/3],{k,7}]", "Input",
+ PageWidth->Infinity,
+ CellChangeTimes->{{3.5648393509809866`*^9, 3.5648393669649005`*^9}, {
+  3.5648393980536785`*^9, 3.564839419173887*^9}, {3.69146068449109*^9, 
+  3.6914606877592764`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   FractionBox[
+    SqrtBox["3"], "2"], ",", 
+   FractionBox[
+    SqrtBox["3"], "2"], ",", "0", ",", 
+   RowBox[{"-", 
+    FractionBox[
+     SqrtBox["3"], "2"]}], ",", 
+   RowBox[{"-", 
+    FractionBox[
+     SqrtBox["3"], "2"]}], ",", "0", ",", 
+   FractionBox[
+    SqrtBox["3"], "2"]}], "}"}]], "Output",
+ CellChangeTimes->{3.6914606355332894`*^9, 3.69146068887434*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Table", "[", 
+  RowBox[{
+   RowBox[{"k", "^", "2"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"k", ",", "5", ",", "15", ",", "2"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.6914606926975594`*^9, 3.6914607039152007`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"25", ",", "49", ",", "81", ",", "121", ",", "169", ",", "225"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.691460705199274*^9}]
+}, Open  ]],
+
+Cell["\<\
+Tabeliramo lahko tudi funkcije ve\[CHacek] spremenljivk. Tako dobimo seznam \
+seznamov.\
+\>", "Text",
+ Evaluatable->False,
+ CellChangeTimes->{{3.406958567890625*^9, 3.4069585684375*^9}, 
+   3.5638910666469774`*^9}],
+
+Cell[CellGroupData[{
+
+Cell["Table[i + j, {i, 5}, {j, 5}]", "Input",
+ PageWidth->Infinity,
+ CellChangeTimes->{{3.5638910747121916`*^9, 3.5638911417923098`*^9}, {
+  3.563891247154895*^9, 3.563891260477318*^9}, {3.56389129268578*^9, 
+  3.56389129276378*^9}, {3.691460720776165*^9, 3.691460736994093*^9}, {
+  3.6914607718910885`*^9, 3.6914607795145245`*^9}, {3.691460919719544*^9, 
+  3.6914609269829597`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"2", ",", "3", ",", "4", ",", "5", ",", "6"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"3", ",", "4", ",", "5", ",", "6", ",", "7"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"4", ",", "5", ",", "6", ",", "7", ",", "8"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"5", ",", "6", ",", "7", ",", "8", ",", "9"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"6", ",", "7", ",", "8", ",", "9", ",", "10"}], "}"}]}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.691460737975149*^9, 3.6914607805775857`*^9, 
+  3.69146092804502*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{" ", 
+  RowBox[{"%", " ", "//", " ", "TableForm"}]}]], "Input",
+ CellChangeTimes->{{3.6914609325432777`*^9, 3.6914609363344946`*^9}}],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"2", "3", "4", "5", "6"},
+    {"3", "4", "5", "6", "7"},
+    {"4", "5", "6", "7", "8"},
+    {"5", "6", "7", "8", "9"},
+    {"6", "7", "8", "9", "10"}
+   },
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[2.0999999999999996`]}, 
+       Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.4]}, 
+       Offset[0.2]}, "RowsIndexed" -> {}}],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{3.691460937689572*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"TableForm", "[", 
+  RowBox[{"%", ",", 
+   RowBox[{"TableAlignments", "\[Rule]", "Center"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.6914610665889444`*^9, 3.691461137916024*^9}}],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"2", "3", "4", "5", "6"},
+    {"3", "4", "5", "6", "7"},
+    {"4", "5", "6", "7", "8"},
+    {"5", "6", "7", "8", "9"},
+    {"6", "7", "8", "9", "10"}
+   },
+   GridBoxAlignment->{
+    "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Center}}, 
+     "RowsIndexed" -> {}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[2.0999999999999996`]}, 
+       Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.4]}, 
+       Offset[0.2]}, "RowsIndexed" -> {}}],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$, TableAlignments -> Center]]]], "Output",
+ CellChangeTimes->{{3.691461112809588*^9, 3.6914611386420655`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Table", "[", 
+   RowBox[{
+    RowBox[{"1", "/", 
+     RowBox[{"(", 
+      RowBox[{"i", "+", "j", "-", "1"}], ")"}]}], ",", 
+    RowBox[{"{", 
+     RowBox[{"i", ",", "4"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"j", ",", "4"}], "}"}]}], "]"}], " ", "//", "MatrixForm", " ", 
+  RowBox[{"(*", " ", 
+   RowBox[{"Hilbertova", " ", "matrika"}], " ", "*)"}]}]], "Input",
+ CellChangeTimes->{{3.6914607498438272`*^9, 3.6914607538280554`*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"1", 
+      FractionBox["1", "2"], 
+      FractionBox["1", "3"], 
+      FractionBox["1", "4"]},
+     {
+      FractionBox["1", "2"], 
+      FractionBox["1", "3"], 
+      FractionBox["1", "4"], 
+      FractionBox["1", "5"]},
+     {
+      FractionBox["1", "3"], 
+      FractionBox["1", "4"], 
+      FractionBox["1", "5"], 
+      FractionBox["1", "6"]},
+     {
+      FractionBox["1", "4"], 
+      FractionBox["1", "5"], 
+      FractionBox["1", "6"], 
+      FractionBox["1", "7"]}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]", ")"}],
+  Function[BoxForm`e$, 
+   MatrixForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{3.6914607557211637`*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Array[f,dim]", "Subsubsection",
+ Evaluatable->False,
+ CellHorizontalScrolling->False,
+ CellChangeTimes->{{3.5638915799914846`*^9, 3.563891593204708*^9}, 
+   3.563891772027822*^9, {3.563891805661481*^9, 3.5638918336947303`*^9}, {
+   3.563891917716478*^9, 3.5638919476685305`*^9}, {3.5638921058528085`*^9, 
+   3.5638921106264167`*^9}, {3.563892143979275*^9, 3.5638921446812763`*^9}, {
+   3.5638922397790437`*^9, 3.56389226057388*^9}, 3.5638924883810797`*^9, {
+   3.5638925852728505`*^9, 3.563892594086866*^9}}],
+
+Cell[TextData[{
+ StyleBox["Array",
+  FontWeight->"Bold"],
+ " tvori seznam dol\[ZHacek]ine ",
+ StyleBox["dim",
+  FontSlant->"Italic"],
+ " z vrednostmi f[",
+ StyleBox["i",
+  FontSlant->"Italic"],
+ "]. \[CapitalCHacek]e je ",
+ StyleBox["dim",
+  FontSlant->"Italic"],
+ "={",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["n", "1"], TraditionalForm]]],
+ ",",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["n", "2"], TraditionalForm]]],
+ ",...}, tvori tabelo ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["n", "1"], TraditionalForm]]],
+ "\[Cross]",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["n", "2"], TraditionalForm]]],
+ "\[Cross]... gnezdenih seznamov z elementi f[",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["i", "1"], TraditionalForm]]],
+ ",",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["i", "2"], TraditionalForm]]],
+ ",...]. Funkcija ",
+ StyleBox["f",
+  FontSlant->"Italic"],
+ " mora biti funkcija ",
+ StyleBox["k",
+  FontSlant->"Italic"],
+ " spremenljivk, \[CHacek]e je ",
+ StyleBox["k",
+  FontSlant->"Italic"],
+ " dol\[ZHacek]ina seznama ",
+ StyleBox["dim ",
+  FontSlant->"Italic"],
+ "oz. 1, \[CHacek]e je parameter ",
+ StyleBox["dim",
+  FontSlant->"Italic"],
+ " \[SHacek]tevilo."
+}], "Text",
+ CellChangeTimes->{{3.406958647*^9, 3.40695870571875*^9}, {
+   3.5638913295642447`*^9, 3.563891345772673*^9}, {3.5638916002715206`*^9, 
+   3.563891602034323*^9}, {3.563891759922201*^9, 3.5638917980330677`*^9}, {
+   3.5638918362375345`*^9, 3.5638918385931387`*^9}, 3.563891873927201*^9, {
+   3.5638921214060354`*^9, 3.56389218666095*^9}, {3.563892229935426*^9, 
+   3.5638922323222303`*^9}, {3.563892267001091*^9, 3.563892350601638*^9}, 
+   3.5638923888529053`*^9, {3.5638924277593737`*^9, 3.5638925632144117`*^9}, {
+   3.5638925970040708`*^9, 3.563892627814125*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Array[f, 3]", "Input",
+ PageWidth->Infinity,
+ CellChangeTimes->{{3.5354738576767993`*^9, 3.535473890956703*^9}, {
+  3.5638916164955487`*^9, 3.5638916237651615`*^9}, {3.691461187968887*^9, 
+  3.69146122351692*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"f", "[", "1", "]"}], ",", 
+   RowBox[{"f", "[", "2", "]"}], ",", 
+   RowBox[{"f", "[", "3", "]"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.6914611929671726`*^9, 3.6914612245579796`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Array", "[", 
+  RowBox[{"f", ",", " ", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", " ", "3"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.6914612271191263`*^9, 3.691461227121126*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"f", "[", 
+      RowBox[{"1", ",", "1"}], "]"}], ",", 
+     RowBox[{"f", "[", 
+      RowBox[{"1", ",", "2"}], "]"}], ",", 
+     RowBox[{"f", "[", 
+      RowBox[{"1", ",", "3"}], "]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"f", "[", 
+      RowBox[{"2", ",", "1"}], "]"}], ",", 
+     RowBox[{"f", "[", 
+      RowBox[{"2", ",", "2"}], "]"}], ",", 
+     RowBox[{"f", "[", 
+      RowBox[{"2", ",", "3"}], "]"}]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.691461229236247*^9}]
+}, Open  ]],
+
+Cell[TextData[{
+ "Z ukazom ",
+ StyleBox["Array",
+  FontWeight->"Bold"],
+ " lahko dobimo predzadnjo tabelo takole:"
+}], "Text",
+ Evaluatable->False,
+ CellChangeTimes->{{3.406958598953125*^9, 3.40695860003125*^9}, {
+   3.406958735015625*^9, 3.406958735234375*^9}, 3.535473815133366*^9, {
+   3.6914613348382874`*^9, 3.6914614030721903`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Array[Plus,{5, 5}] // TableForm", "Input",
+ PageWidth->Infinity,
+ CellChangeTimes->{{3.5354738997562065`*^9, 3.5354739009882765`*^9}, {
+  3.691461274670846*^9, 3.6914613257027645`*^9}}],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"2", "3", "4", "5", "6"},
+    {"3", "4", "5", "6", "7"},
+    {"4", "5", "6", "7", "8"},
+    {"5", "6", "7", "8", "9"},
+    {"6", "7", "8", "9", "10"}
+   },
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[2.0999999999999996`]}, 
+       Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.4]}, 
+       Offset[0.2]}, "RowsIndexed" -> {}}],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{
+  3.6914612789620914`*^9, {3.6914613099838657`*^9, 3.691461318466351*^9}}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Permutations[s]", "Subsubsection",
+ Evaluatable->False,
+ CellHorizontalScrolling->False],
+
+Cell[TextData[{
+ "Ukaz ",
+ StyleBox["Permutations",
+  FontWeight->"Bold"],
+ " vrne seznam vseh permutacij seznama ",
+ StyleBox["s",
+  FontWeight->"Bold"],
+ "."
+}], "Text",
+ Evaluatable->False,
+ CellChangeTimes->{{3.691467647538353*^9, 3.6914676518175983`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Permutations[{1,2,3,4}]", "Input",
+ PageWidth->Infinity,
+ CellChangeTimes->{{3.6914605006305733`*^9, 3.691460502742694*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", "2", ",", "3", ",", "4"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "2", ",", "4", ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "3", ",", "2", ",", "4"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "3", ",", "4", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "4", ",", "2", ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "4", ",", "3", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "1", ",", "3", ",", "4"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "1", ",", "4", ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "3", ",", "1", ",", "4"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "3", ",", "4", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "4", ",", "1", ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "4", ",", "3", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"3", ",", "1", ",", "2", ",", "4"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"3", ",", "1", ",", "4", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"3", ",", "2", ",", "1", ",", "4"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"3", ",", "2", ",", "4", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"3", ",", "4", ",", "1", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"3", ",", "4", ",", "2", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"4", ",", "1", ",", "2", ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"4", ",", "1", ",", "3", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"4", ",", "2", ",", "1", ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"4", ",", "2", ",", "3", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"4", ",", "3", ",", "1", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"4", ",", "3", ",", "2", ",", "1"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{{3.691460497227379*^9, 3.6914605037937546`*^9}}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Divisors[n]", "Subsubsection",
+ CellChangeTimes->{{3.6914676286052704`*^9, 3.6914676333395414`*^9}}],
+
+Cell[TextData[{
+ "Ukaz ",
+ StyleBox["Divisors",
+  FontWeight->"Bold"],
+ " vrne seznam vseh pozitivnih deliteljev naravnega \[SHacek]tevila ",
+ StyleBox["n",
+  FontWeight->"Bold"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.6914676603340855`*^9, 3.691467689679764*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Divisors", "[", "6", "]"}]], "Input",
+ CellChangeTimes->{{3.691467692904948*^9, 3.6914676994943247`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"1", ",", "2", ",", "3", ",", "6"}], "}"}]], "Output",
+ CellChangeTimes->{3.691467700178364*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Divisors", "[", "7", "]"}]], "Input",
+ CellChangeTimes->{{3.691467692904948*^9, 3.691467705456666*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"1", ",", "7"}], "}"}]], "Output",
+ CellChangeTimes->{3.691467705969695*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Divisors", "[", "12", "]"}]], "Input",
+ CellChangeTimes->{{3.691467692904948*^9, 3.69146771216605*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"1", ",", "2", ",", "3", ",", "4", ",", "6", ",", "12"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.6914677127200813`*^9}]
+}, Open  ]]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Operacije s seznami", "Subsection",
+ Evaluatable->False,
+ CellHorizontalScrolling->False,
+ CellChangeTimes->{{3.406958770390625*^9, 3.406958770875*^9}, {
+  3.40855410746875*^9, 3.4085541114375*^9}, {3.6914640832954903`*^9, 
+  3.6914640860566483`*^9}, {3.691464153789522*^9, 3.691464162726033*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Append[s, el], Prepend[s, el]", "Subsubsection",
+ Evaluatable->False,
+ CellHorizontalScrolling->False,
+ CellChangeTimes->{
+  3.408520709765625*^9, 3.691461452744031*^9, {3.691461514367556*^9, 
+   3.691461516920702*^9}}],
+
+Cell[TextData[{
+ StyleBox["Append",
+  FontWeight->"Bold"],
+ " vrne seznam, kjer je seznamu ",
+ StyleBox["s",
+  FontWeight->"Bold"],
+ " na koncu dodan element ",
+ StyleBox["el",
+  FontWeight->"Bold"],
+ ". \n",
+ StyleBox["Prepend",
+  FontWeight->"Bold"],
+ " vrne seznam, kjer je seznamu ",
+ StyleBox["s",
+  FontWeight->"Bold"],
+ " na za\[CHacek]etku dodan element ",
+ StyleBox["el",
+  FontWeight->"Bold"],
+ "."
+}], "Text",
+ Evaluatable->False,
+ CellChangeTimes->{{3.406958870390625*^9, 3.4069588709375*^9}, {
+  3.408520720921875*^9, 3.408520726578125*^9}, {3.691461521479963*^9, 
+  3.691461548471506*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Append[sez, 5]", "Input",
+ PageWidth->Infinity,
+ CellChangeTimes->{{3.563892746873534*^9, 3.5638927476847353`*^9}, 
+   3.691461492908328*^9, 3.6914615614142466`*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"1", ",", "2", ",", "3", ",", "4", ",", "5", ",", "5"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{{3.6914614846208544`*^9, 3.6914614940953965`*^9}, 
+   3.691461564167404*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Prepend", "[", 
+  RowBox[{"sez", ",", "3"}], "]"}]], "Input",
+ CellChangeTimes->{{3.6914614957704926`*^9, 3.691461499997734*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"3", ",", "1", ",", "2", ",", "3", ",", "4", ",", "5"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.6914615016588287`*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Insert[s, el, n]", "Subsubsection",
+ CellChangeTimes->{{3.40855420421875*^9, 3.4085542378125*^9}, {
+  3.408554283578125*^9, 3.408554298328125*^9}}],
+
+Cell[TextData[{
+ StyleBox["Insert",
+  FontWeight->"Bold"],
+ " sestavi nov seznam, tako da vrine element ",
+ StyleBox["el",
+  FontWeight->"Bold"],
+ " na ",
+ StyleBox["n",
+  FontWeight->"Bold"],
+ "-to mesto v seznamu ",
+ StyleBox["s",
+  FontWeight->"Bold"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.408554305453125*^9, 3.408554328640625*^9}, {
+  3.40855443278125*^9, 3.408554515546875*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Insert", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"11", ",", "12", ",", "13"}], "}"}], ",", " ", "1", ",", " ", 
+   "2"}], "]"}]], "Input",
+ CellChangeTimes->{{3.40855433296875*^9, 3.408554351359375*^9}, {
+  3.5354739269107594`*^9, 3.535473948846014*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"11", ",", "1", ",", "12", ",", "13"}], "}"}]], "Output",
+ CellChangeTimes->{3.6914615779681935`*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Delete[s, n]", "Subsubsection",
+ CellChangeTimes->{{3.4085543715*^9, 3.408554377546875*^9}}],
+
+Cell[TextData[{
+ StyleBox["Delete",
+  FontWeight->"Bold"],
+ " sestavi nov seznam tako, da izbri\[SHacek]e ",
+ StyleBox["n",
+  FontWeight->"Bold"],
+ "-ti element iz seznama ",
+ StyleBox["s",
+  FontWeight->"Bold"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.408554383765625*^9, 3.408554393453125*^9}, {
+  3.408554528328125*^9, 3.408554543703125*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Delete", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", "2", ",", "3"}], "}"}], ",", " ", "2"}], "]"}]], "Input",
+ CellChangeTimes->{{3.408554403375*^9, 3.408554411484375*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"1", ",", "3"}], "}"}]], "Output",
+ CellChangeTimes->{3.6914615835455127`*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["ReplacePart[s, i -> el]", "Subsubsection",
+ CellChangeTimes->{{3.408554596921875*^9, 3.408554622875*^9}}],
+
+Cell[TextData[{
+ StyleBox["ReplacePart",
+  FontWeight->"Bold"],
+ " sestavi nov seznam tako da na ",
+ StyleBox["i",
+  FontWeight->"Bold"],
+ "-ti element seznama ",
+ StyleBox["s",
+  FontWeight->"Bold"],
+ " zamenja z elementom ",
+ StyleBox["el",
+  FontWeight->"Bold"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.408554627828125*^9, 3.40855467584375*^9}, {
+  3.6914616030356274`*^9, 3.6914616154493375`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ReplacePart", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"A", ",", " ", "B", ",", " ", "C"}], "}"}], ",", " ", 
+   RowBox[{"2", "\[Rule]", "X"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.40855467821875*^9, 3.408554699625*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"A", ",", "X", ",", "C"}], "}"}]], "Output",
+ CellChangeTimes->{3.6914616278800488`*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Reverse[s]", "Subsubsection",
+ Evaluatable->False,
+ CellHorizontalScrolling->False],
+
+Cell[TextData[{
+ StyleBox["Reverse",
+  FontWeight->"Bold"],
+ " obrne seznam ",
+ StyleBox["s",
+  FontWeight->"Bold"],
+ "."
+}], "Text",
+ Evaluatable->False],
+
+Cell[CellGroupData[{
+
+Cell["Reverse[sez]", "Input",
+ PageWidth->Infinity],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"5", ",", "4", ",", "3", ",", "2", ",", "1"}], "}"}]], "Output",
+ CellChangeTimes->{3.691460078571433*^9, 3.6914604620623674`*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["RotateLeft[s, k], RotateRight[s, k]", "Subsubsection",
+ Evaluatable->False,
+ CellHorizontalScrolling->False,
+ CellChangeTimes->{{3.408520531921875*^9, 3.408520534546875*^9}}],
+
+Cell[TextData[{
+ StyleBox["RotateLeft",
+  FontWeight->"Bold"],
+ " zasu\[CHacek]e seznam ",
+ StyleBox["s",
+  FontWeight->"Bold"],
+ " za ",
+ StyleBox["k",
+  FontWeight->"Bold"],
+ " mest v levo, ",
+ StyleBox["RotateRight",
+  FontWeight->"Bold"],
+ " pa za ",
+ StyleBox["k",
+  FontWeight->"Bold"],
+ " mest v desno."
+}], "Text",
+ Evaluatable->False,
+ CellChangeTimes->{{3.40695843703125*^9, 3.40695843778125*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+RotateLeft[sez,2]
+RotateRight[sez,2]\
+\>", "Input",
+ PageWidth->Infinity,
+ CellChangeTimes->{{3.5638909486483707`*^9, 3.5638909493659716`*^9}, {
+  3.6914602354424057`*^9, 3.6914602364764647`*^9}, {3.6914604711368866`*^9, 
+  3.691460471879929*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"3", ",", "4", ",", "5", ",", "1", ",", "2"}], "}"}]], "Output",
+ CellChangeTimes->{3.6914600995956354`*^9, 3.6914602377285366`*^9, 
+  3.6914604732010045`*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"4", ",", "5", ",", "1", ",", "2", ",", "3"}], "}"}]], "Output",
+ CellChangeTimes->{3.6914600995956354`*^9, 3.6914602377285366`*^9, 
+  3.6914604732090054`*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Join[s1, s2, ...]", "Subsubsection",
+ Evaluatable->False,
+ CellHorizontalScrolling->False,
+ CellChangeTimes->{{3.408520738078125*^9, 3.408520739140625*^9}}],
+
+Cell[TextData[{
+ StyleBox["Join",
+  FontWeight->"Bold"],
+ " zdru\[ZHacek]i dva ali ve\[CHacek] seznamov tako, da vsakega naslednjega \
+doda na konec \[ZHacek]e zdru\[ZHacek]enih prej\[SHacek]njih."
+}], "Text",
+ Evaluatable->False,
+ CellChangeTimes->{{3.40695887978125*^9, 3.406958890984375*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Join[Range[5], Range[3]]", "Input",
+ PageWidth->Infinity,
+ CellChangeTimes->{3.6914616435609455`*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "1", ",", "2", ",", "3", ",", "4", ",", "5", ",", "1", ",", "2", ",", "3"}],
+   "}"}]], "Output",
+ CellChangeTimes->{3.691461647296159*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Partition[s, d, z]", "Subsubsection",
+ Evaluatable->False,
+ CellHorizontalScrolling->False,
+ CellChangeTimes->{{3.408520749359375*^9, 3.40852075025*^9}, {
+  3.5638936696463547`*^9, 3.563893670285956*^9}, {3.6914628210282927`*^9, 
+  3.6914628278226814`*^9}}],
+
+Cell[TextData[{
+ StyleBox["Partition",
+  FontWeight->"Bold"],
+ " razdeli seznam ",
+ StyleBox["s",
+  FontWeight->"Bold"],
+ " na podsezname dol\[ZHacek]ine ",
+ StyleBox["d",
+  FontWeight->"Bold"],
+ " z zamikom ",
+ StyleBox["z",
+  FontWeight->"Bold"],
+ ". \[CapitalCHacek]e zamika ne podamo, je enak dol\[ZHacek]ini podseznamov ",
+ StyleBox["d",
+  FontWeight->"Bold"],
+ "."
+}], "Text",
+ Evaluatable->False,
+ CellChangeTimes->{{3.40695890240625*^9, 3.406958921578125*^9}, {
+  3.40852076434375*^9, 3.408520771203125*^9}, {3.5638931676530733`*^9, 
+  3.563893250816819*^9}, {3.5638933054481153`*^9, 3.563893323965348*^9}, {
+  3.5638936739987626`*^9, 3.5638936795523725`*^9}, {3.69146167406469*^9, 
+  3.691461680729071*^9}, {3.691461959699027*^9, 3.691462213990572*^9}, {
+  3.6914623697044783`*^9, 3.691462374777768*^9}, {3.69146241396801*^9, 
+  3.6914624168661757`*^9}, {3.691462531126711*^9, 3.691462532247775*^9}, {
+  3.691462622314927*^9, 3.6914626233109837`*^9}, {3.6914628313538833`*^9, 
+  3.6914628329829764`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+sez
+Partition[sez,2]\
+\>", "Input",
+ PageWidth->Infinity,
+ CellChangeTimes->{{3.5354740346529217`*^9, 3.5354740359159937`*^9}, {
+   3.563892817728859*^9, 3.5638928279624767`*^9}, {3.5638929093634195`*^9, 
+   3.563892922654643*^9}, {3.5638929937127676`*^9, 3.5638930342104387`*^9}, {
+   3.5638930803241196`*^9, 3.563893089668536*^9}, {3.563893145423034*^9, 
+   3.563893146468236*^9}, 3.691461657614749*^9, 3.6914625823826427`*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"1", ",", "2", ",", "3", ",", "4", ",", "5"}], "}"}]], "Output",
+ CellChangeTimes->{3.691461659671867*^9, 3.6914625835187078`*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"3", ",", "4"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.691461659671867*^9, 3.691462583525708*^9}]
+}, Open  ]],
+
+Cell[TextData[{
+ "Ker \[SHacek]tevilo elementov v seznamu ",
+ StyleBox["sez",
+  FontWeight->"Bold"],
+ " ni deljivo z dva, v razdelitvi manjka zadnji element."
+}], "Text",
+ Evaluatable->False,
+ CellChangeTimes->{{3.4085208010625*^9, 3.408520814671875*^9}, {
+  3.6914624582095404`*^9, 3.6914625057672606`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Partition[sez,2,1]", "Input",
+ PageWidth->Infinity,
+ CellChangeTimes->{{3.6914618179279184`*^9, 3.69146181917699*^9}, {
+  3.6914625517268896`*^9, 3.691462552722946*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"3", ",", "4"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"4", ",", "5"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.6914618203250556`*^9, 3.691462555396099*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Partition[sez,2,3]", "Input",
+ PageWidth->Infinity,
+ CellChangeTimes->{{3.6914618179279184`*^9, 3.6914618505327835`*^9}, {
+  3.6914625597353477`*^9, 3.69146256484264*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"4", ",", "5"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.691461851604845*^9, 3.691462566663744*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Flatten[s, k]", "Subsubsection",
+ Evaluatable->False,
+ CellHorizontalScrolling->False,
+ CellChangeTimes->{3.6914645664781265`*^9}],
+
+Cell[TextData[{
+ StyleBox["Flatten",
+  FontWeight->"Bold"],
+ " brez podanega ",
+ StyleBox["k",
+  FontWeight->"Bold"],
+ " odstrani vse podsezname seznama ",
+ StyleBox["s",
+  FontWeight->"Bold"],
+ " in jih zdru\[ZHacek]i v en seznam. Predstavljamo si lahko, da ",
+ StyleBox["Flatten",
+  FontWeight->"Bold"],
+ " odstrani vse zavite oklepaje znotraj seznama. \[CapitalCHacek]e pa podamo \
+\[SHacek]e argument ",
+ StyleBox["k",
+  FontWeight->"Bold",
+  FontSlant->"Italic"],
+ ", odstrani le zavite oklepaje prvih ",
+ StyleBox["k",
+  FontSlant->"Italic"],
+ "-nivojev oklepajev. To pomeni, da zbri\[SHacek]e le oklepaje, ki imajo \
+globino manj\[SHacek]o ali enako ",
+ StyleBox["k",
+  FontWeight->"Bold",
+  FontSlant->"Italic"],
+ "."
+}], "Text",
+ Evaluatable->False,
+ CellChangeTimes->{{3.4069589489375*^9, 3.406958965171875*^9}, {
+   3.40852083371875*^9, 3.408520914875*^9}, 3.563893332654563*^9, {
+   3.564438065737618*^9, 3.5644380658326235`*^9}, {3.691462860164531*^9, 
+   3.6914628783365707`*^9}, {3.691462912055499*^9, 3.691462925271255*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["sez = Partition[{1,\"abc\",Pi,7.17,{1,2,4}}, 2, 1]", "Input",
+ PageWidth->Infinity,
+ CellChangeTimes->{{3.564839446901473*^9, 3.564839447237492*^9}, 
+   3.6914626618691893`*^9, {3.691462717966398*^9, 3.6914627763707385`*^9}, {
+   3.6914630284941587`*^9, 3.6914630610570216`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", "\<\"abc\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"abc\"\>", ",", "\[Pi]"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\[Pi]", ",", "7.17`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"7.17`", ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "2", ",", "4"}], "}"}]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{{3.6914627416427517`*^9, 3.69146277709678*^9}, {
+  3.691463034853523*^9, 3.6914630802181177`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Flatten", "[", 
+  RowBox[{"sez", ",", " ", "1"}], "]"}]], "Input",
+ CellChangeTimes->{{3.6914630538316083`*^9, 3.691463053834608*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "1", ",", "\<\"abc\"\>", ",", "\<\"abc\"\>", ",", "\[Pi]", ",", "\[Pi]", 
+   ",", "7.17`", ",", "7.17`", ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "2", ",", "4"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.6914630830432787`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Flatten", "[", "sez", "]"}]], "Input",
+ CellChangeTimes->{{3.6914630538316083`*^9, 3.691463053834608*^9}, {
+  3.691463091393757*^9, 3.6914630953449826`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "1", ",", "\<\"abc\"\>", ",", "\<\"abc\"\>", ",", "\[Pi]", ",", "\[Pi]", 
+   ",", "7.17`", ",", "7.17`", ",", "1", ",", "2", ",", "4"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.6914630964260445`*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Sort[s, f]", "Subsubsection",
+ Evaluatable->False,
+ CellHorizontalScrolling->False,
+ CellChangeTimes->{3.691464569710312*^9}],
+
+Cell[TextData[{
+ StyleBox["Sort",
+  FontWeight->"Bold"],
+ " uredi elemente v seznamu ",
+ StyleBox["s",
+  FontWeight->"Bold",
+  FontSlant->"Italic"],
+ ". Pri tem lahko kot argument podamo tudi ime funkcije ",
+ StyleBox["f",
+  FontWeight->"Bold"],
+ ", ki dolo\[CHacek]a klju\[CHacek] urejanja. Ta funkcija mora biti funkcija \
+dveh spremenljivk. Vrne naj ",
+ StyleBox["True,",
+  FontSlant->"Italic"],
+ " \[CHacek]e naj bo prvi element pred drugim v urejeni tabeli in ",
+ StyleBox["False",
+  FontSlant->"Italic"],
+ " sicer. \[CapitalCHacek]e funkcije ",
+ StyleBox["f",
+  FontWeight->"Bold"],
+ " ne podamo, ",
+ StyleBox["Sort",
+  FontWeight->"Bold"],
+ " uredi elemente po velikosti od najmanj\[SHacek]ega proti \
+najve\[CHacek]jemu in upo\[SHacek]teva naravni vrstni red."
+}], "Text",
+ Evaluatable->False,
+ CellChangeTimes->{{3.406958979328125*^9, 3.406959012359375*^9}, {
+  3.4085209520625*^9, 3.40852100475*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["s4 = {10,7,5,4,3,2,8,9,1,6}", "Input",
+ PageWidth->Infinity,
+ CellChangeTimes->{{3.6914631199783916`*^9, 3.691463129480935*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "10", ",", "7", ",", "5", ",", "4", ",", "3", ",", "2", ",", "8", ",", "9", 
+   ",", "1", ",", "6"}], "}"}]], "Output",
+ CellChangeTimes->{3.6914631314590483`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Sort", "[", "s4", "]"}]], "Input",
+ CellChangeTimes->{{3.691463133296153*^9, 3.6914631332991533`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "1", ",", "2", ",", "3", ",", "4", ",", "5", ",", "6", ",", "7", ",", "8", 
+   ",", "9", ",", "10"}], "}"}]], "Output",
+ CellChangeTimes->{3.6914631348402414`*^9}]
+}, Open  ]],
+
+Cell[TextData[{
+ "Namesto po velikosti bomo sedaj elemente seznama ",
+ StyleBox["s4",
+  FontWeight->"Bold"],
+ " uredili po velikosti ostanka pri deljenju s 3 od najmanj\[SHacek]ega proti \
+najve\[CHacek]jemu."
+}], "Text",
+ Evaluatable->False,
+ CellChangeTimes->{{3.40695902490625*^9, 3.40695902778125*^9}, {
+  3.691463188417306*^9, 3.6914632016260614`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+vecji[x_,y_]:= Mod[x,3] <= Mod[y,3];
+Sort[s4,vecji]\
+\>", "Input",
+ PageWidth->Infinity,
+ CellChangeTimes->{{3.408521035140625*^9, 3.408521037578125*^9}, {
+  3.6914631738104706`*^9, 3.6914631777636967`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "3", ",", "9", ",", "6", ",", "10", ",", "7", ",", "4", ",", "1", ",", "5", 
+   ",", "2", ",", "8"}], "}"}]], "Output",
+ CellChangeTimes->{{3.6914631582455807`*^9, 3.691463180539856*^9}}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Select[s, f]", "Subsubsection",
+ Evaluatable->False,
+ CellHorizontalScrolling->False,
+ CellChangeTimes->{3.691464572398465*^9}],
+
+Cell[TextData[{
+ "Ukaz ",
+ StyleBox["Select",
+  FontWeight->"Bold"],
+ " iz seznama ",
+ StyleBox["s",
+  FontWeight->"Bold"],
+ " izbere podseznam tistih elementov, pri katerih logi\[CHacek]na funkcija ",
+ StyleBox["f ",
+  FontWeight->"Bold"],
+ "vrne vrednost ",
+ StyleBox["True",
+  FontSlant->"Italic"],
+ ". "
+}], "Text",
+ Evaluatable->False,
+ CellChangeTimes->{{3.40695903528125*^9, 3.406959060578125*^9}, {
+  3.40852106696875*^9, 3.40852106825*^9}, {3.6914677573166323`*^9, 
+  3.691467853140113*^9}, {3.6914680990531783`*^9, 3.691468124291622*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Zgled: pra\[SHacek]tevila", "Subsubsection",
+ CellChangeTimes->{{3.6914708748619456`*^9, 3.6914708885237265`*^9}}],
+
+Cell[TextData[{
+ "Kot zgled zapi\[SHacek]imo funkcijo, ki vrne seznam vseh pra\[SHacek]tevil, \
+ki so manj\[SHacek]a ali enaka ",
+ StyleBox["n",
+  FontWeight->"Bold"],
+ ". Funkcija ",
+ StyleBox["f",
+  FontWeight->"Bold"],
+ " mora biti funkcija ene spremenljivke."
+}], "Text",
+ Evaluatable->False,
+ CellChangeTimes->{{3.40852107596875*^9, 3.4085210766875*^9}, {
+  3.6914681292179036`*^9, 3.691468204367202*^9}, {3.691468564583805*^9, 
+  3.6914685653948517`*^9}}],
+
+Cell["Pra\[SHacek]tevilaDo[n_] := Select[Range[n], PrimeQ]", "Input",
+ PageWidth->Infinity,
+ CellChangeTimes->{
+  3.408521084203125*^9, {3.691468207550384*^9, 3.6914682743152027`*^9}, {
+   3.69146843197022*^9, 3.691468442343814*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Pra\[SHacek]tevilaDo[100]", "Input",
+ PageWidth->Infinity,
+ CellChangeTimes->{
+  3.408521084203125*^9, {3.691468207550384*^9, 3.6914682743152027`*^9}, 
+   3.691468433771323*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "2", ",", "3", ",", "5", ",", "7", ",", "11", ",", "13", ",", "17", ",", 
+   "19", ",", "23", ",", "29", ",", "31", ",", "37", ",", "41", ",", "43", 
+   ",", "47", ",", "53", ",", "59", ",", "61", ",", "67", ",", "71", ",", 
+   "73", ",", "79", ",", "83", ",", "89", ",", "97"}], "}"}]], "Output",
+ CellChangeTimes->{3.691468274848233*^9}]
+}, Open  ]],
+
+Cell[TextData[{
+ "Sestavimo \[SHacek]e funkcijo, ki vrne \[SHacek]tevilo vseh \
+pra\[SHacek]tevil, manj\[SHacek]ih ali enakih ",
+ StyleBox["n",
+  FontWeight->"Bold"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.6914683123743796`*^9, 3.691468359814093*^9}, {
+  3.6914702191224394`*^9, 3.6914702229596586`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"\[CapitalSHacek]tPra\[SHacek]tevilDo", "[", "n_", "]"}], ":=", 
+  RowBox[{"Length", "[", 
+   RowBox[{"Pra\[SHacek]tevilaDo", "[", "n", "]"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.69146836762454*^9, 3.6914684187554646`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"\[CapitalSHacek]tPra\[SHacek]tevilDo", "[", "100", "]"}]], "Input",
+ CellChangeTimes->{{3.6914684532914395`*^9, 3.6914684643580723`*^9}}],
+
+Cell[BoxData["25"], "Output",
+ CellChangeTimes->{3.6914684649361057`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"\[CapitalSHacek]tPra\[SHacek]tevilDo", "[", "1000", "]"}]], "Input",
+ CellChangeTimes->{{3.6914684532914395`*^9, 3.6914684761797485`*^9}}],
+
+Cell[BoxData["168"], "Output",
+ CellChangeTimes->{3.6914684770317974`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"\[CapitalSHacek]tPra\[SHacek]tevilDo", "[", "10000", "]"}]], "Input",
+ CellChangeTimes->{{3.6914684532914395`*^9, 3.6914684811910353`*^9}}],
+
+Cell[BoxData["1229"], "Output",
+ CellChangeTimes->{3.691468482268097*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Zgled: popolna \[SHacek]tevila", "Subsubsection",
+ CellChangeTimes->{{3.6914700366860046`*^9, 3.691470043305383*^9}}],
+
+Cell[TextData[{
+ "Naravno \[SHacek]tevilo ",
+ StyleBox["n",
+  FontWeight->"Bold"],
+ " imenujemo ",
+ StyleBox["popolno",
+  FontSlant->"Italic"],
+ ", \[CHacek]e je vsota njegovih pozitivnih deliteljev enaka ",
+ StyleBox["2n",
+  FontWeight->"Bold"],
+ ". Primer popolnega \[SHacek]tevila je 6, saj so njegovi pozitivni delitelji \
+1, 2, 3, 6, njihova vsota pa je 1 + 2 + 3 + 6 = 12 = 2 x 6. Sestavimo logi\
+\[CHacek]no funkcijo, ki preveri, ali je dano \[SHacek]tevilo popolno."
+}], "Text",
+ CellChangeTimes->{{3.6914700481146584`*^9, 3.6914701907298155`*^9}, {
+  3.6914702610228357`*^9, 3.6914702834111166`*^9}, {3.6914703259185476`*^9, 
+  3.6914704494556136`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Clear", "[", "PopolnoQ", "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"PopolnoQ", "[", "n_", "]"}], ":=", 
+  RowBox[{
+   RowBox[{"Total", "[", 
+    RowBox[{"Divisors", "[", "n", "]"}], "]"}], "\[Equal]", 
+   RowBox[{"2", "n"}]}]}]}], "Input",
+ CellChangeTimes->{{3.691470289919489*^9, 3.6914703135388393`*^9}, {
+  3.691470463823436*^9, 3.69147051372429*^9}, {3.69305924738055*^9, 
+  3.693059255109992*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"PopolnoQ", "[", "6", "]"}]], "Input",
+ CellChangeTimes->{{3.6914704763081493`*^9, 3.6914704856976867`*^9}}],
+
+Cell[BoxData["True"], "Output",
+ CellChangeTimes->{3.69147048627872*^9, 3.691470522483791*^9, 
+  3.6930592659616127`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"PopolnoQ", "[", "7", "]"}]], "Input",
+ CellChangeTimes->{{3.6914704763081493`*^9, 3.6914704856976867`*^9}, {
+  3.691470524523907*^9, 3.6914705276790876`*^9}}],
+
+Cell[BoxData["False"], "Output",
+ CellChangeTimes->{3.691470528555138*^9, 3.6930592686767683`*^9}]
+}, Open  ]],
+
+Cell[TextData[{
+ "Sestavimo \[SHacek]e funkcijo ",
+ StyleBox["PopolnaDo[n]",
+  FontWeight->"Bold"],
+ ", ki vrne seznam vseh popolnih \[SHacek]tevil, ki so manj\[SHacek]a ali \
+enaka ",
+ StyleBox["n",
+  FontWeight->"Bold"],
+ ", in funkcijo  ",
+ StyleBox["\[CapitalSHacek]tPopolnihDo[n]",
+  FontWeight->"Bold"],
+ ", ki vrne \[SHacek]tevilo vseh popolnih \[SHacek]tevil, ki so \
+manj\[SHacek]a ali enaka ",
+ StyleBox["n.",
+  FontWeight->"Bold"]
+}], "Text",
+ CellChangeTimes->{{3.6914705396417723`*^9, 3.691470545838126*^9}, {
+  3.6914706009822807`*^9, 3.6914706924135103`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"PopolnaDo", "[", "n_", "]"}], ":=", 
+  RowBox[{"Select", "[", 
+   RowBox[{
+    RowBox[{"Range", "[", "n", "]"}], ",", "PopolnoQ"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.6914706962697306`*^9, 3.6914707571152105`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"PopolnaDo", "[", "100", "]"}]], "Input",
+ CellChangeTimes->{{3.691470777268364*^9, 3.6914707825216637`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"6", ",", "28"}], "}"}]], "Output",
+ CellChangeTimes->{3.6914707830456944`*^9, 3.693059281544504*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"PopolnaDo", "[", "1000", "]"}]], "Input",
+ CellChangeTimes->{{3.691470777268364*^9, 3.6914707893920565`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"6", ",", "28", ",", "496"}], "}"}]], "Output",
+ CellChangeTimes->{3.6914707903351107`*^9, 3.693059283664625*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"PopolnaDo", "[", "10000", "]"}]], "Input",
+ CellChangeTimes->{{3.691470777268364*^9, 3.69147079748652*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"6", ",", "28", ",", "496", ",", "8128"}], "}"}]], "Output",
+ CellChangeTimes->{3.691470798071553*^9, 3.6930592867248*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"\[CapitalSHacek]tPopolnihDo", "[", "n_", "]"}], ":=", 
+  RowBox[{"Length", "[", 
+   RowBox[{"PopolnaDo", "[", "n", "]"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.6914706962697306`*^9, 3.6914707571152105`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"\[CapitalSHacek]tPopolnihDo", "[", "10000", "]"}]], "Input",
+ CellChangeTimes->{{3.691470806034009*^9, 3.691470817559668*^9}}],
+
+Cell[BoxData["4"], "Output",
+ CellChangeTimes->{3.691470818201705*^9, 3.693059300740602*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"\[CapitalSHacek]tPopolnihDo", "[", "20000", "]"}]], "Input",
+ CellChangeTimes->{{3.691470806034009*^9, 3.6914708226229577`*^9}}],
+
+Cell[BoxData["4"], "Output",
+ CellChangeTimes->{3.6914708236260147`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"\[CapitalSHacek]tPopolnihDo", "[", "30000", "]"}]], "Input",
+ CellChangeTimes->{{3.691470806034009*^9, 3.6914708288463135`*^9}}],
+
+Cell[BoxData["4"], "Output",
+ CellChangeTimes->{3.691470829821369*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"\[CapitalSHacek]tPopolnihDo", "[", "100000", "]"}]], "Input",
+ CellChangeTimes->{{3.691470806034009*^9, 3.6914708367827673`*^9}}],
+
+Cell[BoxData["4"], "Output",
+ CellChangeTimes->{3.69147083927391*^9, 3.693059309491102*^9}]
+}, Open  ]]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Funkcije vi\[SHacek]jega reda", "Subsection",
+ CellChangeTimes->{{3.691464416022521*^9, 3.6914644216718445`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Map[f, s]", "Subsubsection",
+ Evaluatable->False,
+ CellHorizontalScrolling->False,
+ CellChangeTimes->{3.408520553953125*^9}],
+
+Cell[TextData[{
+ StyleBox["Map",
+  FontWeight->"Bold"],
+ " vrne seznam ",
+ StyleBox["f",
+  FontWeight->"Bold"],
+ "-slik elementov seznama ",
+ StyleBox["s",
+  FontWeight->"Bold"],
+ ". Funkcija ",
+ StyleBox["f",
+  FontWeight->"Bold"],
+ " mora biti funkcija ene spremenljivke."
+}], "Text",
+ Evaluatable->False,
+ CellChangeTimes->{{3.40695874853125*^9, 3.406958749015625*^9}, {
+  3.408520632296875*^9, 3.408520648453125*^9}, {3.691468593780475*^9, 
+  3.691468612143525*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Map", "[", 
+  RowBox[{"f", ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "2", ",", "3", ",", "4"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.691468619023919*^9, 3.6914686348058214`*^9}, {
+  3.69146867236797*^9, 3.691468673043009*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"f", "[", "1", "]"}], ",", 
+   RowBox[{"f", "[", "2", "]"}], ",", 
+   RowBox[{"f", "[", "3", "]"}], ",", 
+   RowBox[{"f", "[", "4", "]"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.691468635312851*^9, 3.691468673825053*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Map[PrimeQ,{1, 2, 3, 4}]", "Input",
+ PageWidth->Infinity,
+ CellChangeTimes->{{3.5642597121003733`*^9, 3.5642597441952095`*^9}, {
+  3.6914686413081937`*^9, 3.69146864753555*^9}, {3.691468677770279*^9, 
+  3.691468689253936*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"False", ",", "True", ",", "True", ",", "False"}], "}"}]], "Output",
+ CellChangeTimes->{3.6914686901319857`*^9}]
+}, Open  ]],
+
+Cell[TextData[{
+ "Namesto ",
+ StyleBox["Map[f, s]",
+  FontWeight->"Bold"],
+ " lahko pi\[SHacek]emo tudi ",
+ StyleBox["f /@ s",
+  FontWeight->"Bold"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.691468747801285*^9, 3.6914687929788685`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"f", "/@", 
+  RowBox[{"{", 
+   RowBox[{"1", ",", "2", ",", "3", ",", "4"}], "}"}]}]], "Input",
+ CellChangeTimes->{{3.691468619023919*^9, 3.6914686348058214`*^9}, {
+  3.69146867236797*^9, 3.691468673043009*^9}, {3.69146880786772*^9, 
+  3.6914688138390617`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"f", "[", "1", "]"}], ",", 
+   RowBox[{"f", "[", "2", "]"}], ",", 
+   RowBox[{"f", "[", "3", "]"}], ",", 
+   RowBox[{"f", "[", "4", "]"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.6914688147251124`*^9}]
+}, Open  ]],
+
+Cell[TextData[{
+ "Ukaz ",
+ StyleBox["Map[f, izr]",
+  FontWeight->"Bold"],
+ " lahko uporabimo na poljubnem izrazu ",
+ StyleBox["izr",
+  FontWeight->"Bold"],
+ ". Deluje tako, da argumente izraza ",
+ StyleBox["izr",
+  FontWeight->"Bold"],
+ " zamenja z njihovimi ",
+ StyleBox["f",
+  FontWeight->"Bold"],
+ "-slikami."
+}], "Text",
+ CellChangeTimes->{{3.6914688890123615`*^9, 3.691468917104968*^9}, {
+  3.6914689644016733`*^9, 3.6914690489875116`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"f", "/@", 
+  RowBox[{"(", 
+   RowBox[{"a", "+", "b", "+", "c"}], ")"}]}]], "Input",
+ CellChangeTimes->{{3.691468924856412*^9, 3.6914689339959345`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"f", "[", "a", "]"}], "+", 
+  RowBox[{"f", "[", "b", "]"}], "+", 
+  RowBox[{"f", "[", "c", "]"}]}]], "Output",
+ CellChangeTimes->{3.6914689349689903`*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Apply[f, s]", "Subsubsection",
+ Evaluatable->False,
+ CellHorizontalScrolling->False,
+ CellChangeTimes->{3.6914645749426107`*^9}],
+
+Cell[TextData[{
+ StyleBox["Apply",
+  FontWeight->"Bold"],
+ " sestavi izraz z glavo ",
+ StyleBox["f",
+  FontWeight->"Bold"],
+ " in z argumenti, ki so elementi seznama ",
+ StyleBox["s",
+  FontWeight->"Bold"],
+ ". "
+}], "Text",
+ Evaluatable->False,
+ CellChangeTimes->{{3.406959089765625*^9, 3.406959112234375*^9}, {
+   3.408521177078125*^9, 3.408521222265625*^9}, 3.5644380516248107`*^9, {
+   3.6914690962592154`*^9, 3.69146914109578*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Apply[Plus,{a,b,c,d}]", "Input",
+ PageWidth->Infinity,
+ CellChangeTimes->{{3.691469158568779*^9, 3.6914691674712887`*^9}, {
+  3.6914693389380956`*^9, 3.691469339429124*^9}}],
+
+Cell[BoxData[
+ RowBox[{"a", "+", "b", "+", "c", "+", "d"}]], "Output",
+ CellChangeTimes->{3.69146916819133*^9, 3.691469340830204*^9}]
+}, Open  ]],
+
+Cell[TextData[{
+ "Namesto ",
+ StyleBox["Apply[f, s]",
+  FontWeight->"Bold"],
+ " lahko pi\[SHacek]emo tudi ",
+ StyleBox["f @@ s",
+  FontWeight->"Bold"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.691468747801285*^9, 3.6914687929788685`*^9}, {
+  3.691469305699195*^9, 3.69146932082806*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Plus", "@@", 
+  RowBox[{"{", 
+   RowBox[{"1", ",", "2", ",", "3", ",", "4"}], "}"}]}]], "Input",
+ CellChangeTimes->{{3.6914693242872577`*^9, 3.691469332102705*^9}}],
+
+Cell[BoxData["10"], "Output",
+ CellChangeTimes->{3.6914693344108367`*^9}]
+}, Open  ]],
+
+Cell[TextData[{
+ "Ukaz ",
+ StyleBox["Apply[f, izr]",
+  FontWeight->"Bold"],
+ " lahko uporabimo na poljubnem izrazu ",
+ StyleBox["izr",
+  FontWeight->"Bold"],
+ ". Deluje tako, da glavo izraza ",
+ StyleBox["izr",
+  FontWeight->"Bold"],
+ " zamenja z ",
+ StyleBox["f",
+  FontWeight->"Bold"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.6914688890123615`*^9, 3.691468917104968*^9}, {
+  3.6914689644016733`*^9, 3.6914690489875116`*^9}, {3.691469373618079*^9, 
+  3.691469395728344*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"List", "@@", 
+  RowBox[{"(", 
+   RowBox[{"a", "+", "b", "+", "c"}], ")"}]}]], "Input",
+ CellChangeTimes->{{3.6914694079380426`*^9, 3.6914694207127733`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"a", ",", "b", ",", "c"}], "}"}]], "Output",
+ CellChangeTimes->{3.6914694263730965`*^9}]
+}, Open  ]],
+
+Cell[TextData[{
+ StyleBox["Zgled:",
+  FontSlant->"Italic"],
+ "  Funkcijo ",
+ StyleBox["n!",
+  FontWeight->"Bold"],
+ " lahko zdaj sprogramiramo takole."
+}], "Text",
+ CellChangeTimes->{{3.40852140575*^9, 3.40852151265625*^9}, {
+  3.6914692078926*^9, 3.691469229333827*^9}, {3.6914694357826347`*^9, 
+  3.6914694552977514`*^9}}],
+
+Cell["f[n_]:= Apply[Times, Range[n]]", "Input",
+ PageWidth->Infinity,
+ CellChangeTimes->{{3.6914692371082716`*^9, 3.6914692495089808`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Table", "[", 
+  RowBox[{
+   RowBox[{"f", "[", "n", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"n", ",", "6"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.6914692548012834`*^9, 3.6914692681050444`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"1", ",", "2", ",", "6", ",", "24", ",", "120", ",", "720"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.691469268628074*^9}]
+}, Open  ]]
+}, Open  ]]
+}, Closed]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\[CapitalCHacek]iste funkcije", "Section",
+ CellChangeTimes->{{3.5640001267925205`*^9, 3.564000177506421*^9}, {
+  3.5640008798455925`*^9, 3.564000885955942*^9}, {3.6908633694440484`*^9, 
+  3.690863377433505*^9}, {3.691469639462285*^9, 3.6914696412923894`*^9}}],
+
+Cell[TextData[{
+ "V\[CHacek]asih moramo sestaviti kak\[SHacek]no funkcijo, ki jo bomo \
+uporabili le na enem samem mestu. V tem primeru lahko uporabimo t.i. ",
+ StyleBox["\[CHacek]isto funkcijo",
+  FontSlant->"Italic"],
+ ", ki jo definiramo kar na mestu, kjer jo uporabimo. Tak\[SHacek]ni funkciji \
+re\[CHacek]emo tudi ",
+ StyleBox["anonimna funkcija",
+  FontSlant->"Italic"],
+ ", ker nima posebnega imena, ampak njena definicija hkrati slu\[ZHacek]i \
+tudi kot njeno ime. Definiramo jo lahko z ukazom ",
+ StyleBox["Function", "Input"],
+ " ali pa s pomo\[CHacek]jo operatorja ",
+ StyleBox["&", "Input"],
+ ". Spremenljivke lahko eksplicitno navedemo (\[CHacek]e jih je ve\[CHacek], \
+jih damo v seznam) ali pa uporabljamo formalni parameter ",
+ StyleBox["#", "Input"],
+ " (ali ",
+ StyleBox["#1", "Input"],
+ ", ",
+ StyleBox["#2", "Input"],
+ ", ..., \[CHacek]e definiramo \[CHacek]isto funkcijo ve\[CHacek] \
+spremenljivk)."
+}], "Text",
+ CellChangeTimes->{{3.564000160471447*^9, 3.5640002408360434`*^9}, {
+  3.5640005489656672`*^9, 3.564000567812745*^9}, {3.564000991444976*^9, 
+  3.5640010074928937`*^9}, {3.5640010527884846`*^9, 3.5640010742607126`*^9}, {
+  3.56400111303193*^9, 3.5640011277807736`*^9}, {3.5640011617807183`*^9, 
+  3.56400118803722*^9}, {3.5640014313331356`*^9, 3.5640015230303802`*^9}, {
+  3.564001558103387*^9, 3.5640015621816196`*^9}, {3.6908634044100485`*^9, 
+  3.6908634100293694`*^9}, {3.6914696453296204`*^9, 3.691469910790804*^9}, {
+  3.6914699486549697`*^9, 3.6914700206680884`*^9}, {3.691470194746045*^9, 
+  3.6914702021824703`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"f1", "=", 
+   RowBox[{"Function", "[", 
+    RowBox[{"x", ",", 
+     RowBox[{"x", "^", "2"}]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"f2", "=", 
+   RowBox[{"Function", "[", 
+    RowBox[{"#", "^", "2"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"f3", "=", 
+   RowBox[{
+    RowBox[{"#", "^", "2"}], "&"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"f1", "[", "t", "]"}], ",", " ", 
+   RowBox[{"f2", "[", "t", "]"}], ",", " ", 
+   RowBox[{"f3", "[", "t", "]"}]}], "}"}]}], "Input",
+ CellChangeTimes->{{3.564000964669444*^9, 3.5640009657335052`*^9}, {
+  3.5640012238772697`*^9, 3.564001397867222*^9}, {3.5640015698520584`*^9, 
+  3.5640016052440825`*^9}, {3.5640016845076165`*^9, 3.5640018035604258`*^9}, {
+  3.690863284575194*^9, 3.6908633252525206`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   SuperscriptBox["t", "2"], ",", 
+   SuperscriptBox["t", "2"], ",", 
+   SuperscriptBox["t", "2"]}], "}"}]], "Output",
+ CellChangeTimes->{{3.690863312978819*^9, 3.6908633266726017`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"f4", "=", 
+   RowBox[{"Function", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"x", ",", "y"}], "}"}], ",", 
+     RowBox[{
+      RowBox[{"2", "x"}], "+", 
+      RowBox[{"3", "y"}]}]}], "]"}]}], ";", 
+  RowBox[{"f5", "=", 
+   RowBox[{"Function", "[", 
+    RowBox[{
+     RowBox[{"2", "#1"}], "+", 
+     RowBox[{"3", "#2"}]}], "]"}]}], ";", 
+  RowBox[{"f6", "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"2", "#1"}], "+", 
+     RowBox[{"3", "#2"}]}], " ", "&"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"f4", "[", 
+    RowBox[{"t", ",", "s"}], "]"}], ",", " ", 
+   RowBox[{"f5", "[", 
+    RowBox[{"t", ",", "s"}], "]"}], ",", " ", 
+   RowBox[{"f6", "[", 
+    RowBox[{"t", ",", "s"}], "]"}]}], "}"}]}], "Input",
+ CellChangeTimes->{{3.564000964669444*^9, 3.5640009657335052`*^9}, {
+  3.5640012238772697`*^9, 3.564001397867222*^9}, {3.5640015698520584`*^9, 
+  3.5640016052440825`*^9}, {3.5640016845076165`*^9, 3.5640018035604258`*^9}, {
+  3.690863284575194*^9, 3.6908632873513527`*^9}, {3.690863331601884*^9, 
+  3.6908633406984043`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"3", " ", "s"}], "+", 
+    RowBox[{"2", " ", "t"}]}], ",", 
+   RowBox[{
+    RowBox[{"3", " ", "s"}], "+", 
+    RowBox[{"2", " ", "t"}]}], ",", 
+   RowBox[{
+    RowBox[{"3", " ", "s"}], "+", 
+    RowBox[{"2", " ", "t"}]}]}], "}"}]], "Output",
+ CellChangeTimes->{3.6908633420714827`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Zgled", "Subsubsection",
+ CellChangeTimes->{{3.691470912856119*^9, 3.691470921863634*^9}}],
+
+Cell["\<\
+Sestavimo seznam vseh \[SHacek]tevil med 1 in 1000, ki imajo natanko tri \
+pozitivne delitelje.\
+\>", "Text",
+ CellChangeTimes->{{3.6914709287990303`*^9, 3.6914709721685114`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Select", "[", 
+  RowBox[{
+   RowBox[{"Range", "[", "1000", "]"}], ",", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"Length", "[", 
+      RowBox[{"Divisors", "[", "#", "]"}], "]"}], "\[Equal]", "3"}], "&"}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.6914709746606536`*^9, 3.6914710028202643`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "4", ",", "9", ",", "25", ",", "49", ",", "121", ",", "169", ",", "289", 
+   ",", "361", ",", "529", ",", "841", ",", "961"}], "}"}]], "Output",
+ CellChangeTimes->{3.691471004440357*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Map", "[", 
+  RowBox[{"Divisors", ",", "%"}], "]"}]], "Input",
+ CellChangeTimes->{{3.6914710074945316`*^9, 3.6914710264306145`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", "2", ",", "4"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "3", ",", "9"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "5", ",", "25"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "7", ",", "49"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "11", ",", "121"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "13", ",", "169"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "17", ",", "289"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "19", ",", "361"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "23", ",", "529"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "29", ",", "841"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "31", ",", "961"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.6914710272876635`*^9}]
+}, Open  ]]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Mno\[ZHacek]ice", "Section",
+ CellChangeTimes->{{3.408521997421875*^9, 3.40852200053125*^9}, 
+   3.40852236728125*^9}],
+
+Cell["\<\
+\[CapitalCHacek]eprav je vrstni red elementov v seznamu pomemben, uporabljamo \
+sezname tudi za predstavitev mno\[ZHacek]ic. Tedaj seveda pozabimo na vrstni \
+red elementov.\
+\>", "Text",
+ Evaluatable->False,
+ CellChangeTimes->{{3.406959120125*^9, 3.406959126875*^9}, {
+  3.6914632614164815`*^9, 3.6914632844968014`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Union[s1, s2, ...]", "Subsubsection",
+ Evaluatable->False,
+ CellHorizontalScrolling->False,
+ CellChangeTimes->{{3.4085216134375*^9, 3.40852161440625*^9}}],
+
+Cell[TextData[{
+ StyleBox["Union",
+  FontWeight->"Bold"],
+ " vrne unijo mno\[ZHacek]ic ",
+ StyleBox["s1",
+  FontWeight->"Bold"],
+ ", ",
+ StyleBox["s2",
+  FontWeight->"Bold"],
+ ",...",
+ StyleBox[".",
+  FontSlant->"Italic"],
+ " Kot argument mu lahko podamo tudi en sam seznam. V tem primeru vrne \
+seznam, kjer ni ve\[CHacek] morebitnega podvajanja elementov, elementi pa so \
+dodatno \[SHacek]e urejeni."
+}], "Text",
+ Evaluatable->False,
+ CellChangeTimes->{{3.4069591316875*^9, 3.406959140484375*^9}, {
+   3.4085215653125*^9, 3.4085215853125*^9}, 3.408521620046875*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"s1", "=", 
+   RowBox[{"{", 
+    RowBox[{"7", ",", "1", ",", "3", ",", "5"}], "}"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"s2", "=", 
+   RowBox[{"{", 
+    RowBox[{"8", ",", "3", ",", "2"}], "}"}]}], ";"}], "\n", 
+ RowBox[{"Union", "[", 
+  RowBox[{"s1", ",", "s2"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.691463318759761*^9, 3.6914633581370134`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"1", ",", "2", ",", "3", ",", "5", ",", "7", ",", "8"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{
+  3.6914633007387304`*^9, {3.691463345092267*^9, 3.691463359287079*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Union[{3,1,2,3,3,1,1,2,1}]", "Input",
+ PageWidth->Infinity,
+ CellChangeTimes->{{3.408521595859375*^9, 3.408521596046875*^9}, {
+  3.6914633828624277`*^9, 3.6914634024915504`*^9}, {3.6914634347143936`*^9, 
+  3.6914634428218575`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"1", ",", "2", ",", "3"}], "}"}]], "Output",
+ CellChangeTimes->{{3.6914633712777653`*^9, 3.6914634033496*^9}, 
+   3.6914634443799467`*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Intersection[s1,s2]", "Subsubsection",
+ Evaluatable->False,
+ CellHorizontalScrolling->False],
+
+Cell[TextData[{
+ StyleBox["Intersection",
+  FontWeight->"Bold"],
+ " vrne presek mno\[ZHacek]ic ",
+ StyleBox["s1",
+  FontWeight->"Bold"],
+ ", ",
+ StyleBox["s2,",
+  FontWeight->"Bold"],
+ " ...."
+}], "Text",
+ Evaluatable->False,
+ CellChangeTimes->{{3.406959173453125*^9, 3.40695917690625*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{"s1", "\[IndentingNewLine]", "s2", "\[IndentingNewLine]", 
+ RowBox[{"Intersection", "[", 
+  RowBox[{"s1", ",", "s2"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.40852177753125*^9, 3.40852178053125*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"7", ",", "1", ",", "3", ",", "5"}], "}"}]], "Output",
+ CellChangeTimes->{3.691463454791542*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"8", ",", "3", ",", "2"}], "}"}]], "Output",
+ CellChangeTimes->{3.691463454796542*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", "3", "}"}]], "Output",
+ CellChangeTimes->{3.6914634548025427`*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Complement[s1, s2]", "Subsubsection",
+ Evaluatable->False,
+ CellHorizontalScrolling->False,
+ CellChangeTimes->{3.40852166309375*^9}],
+
+Cell[TextData[{
+ StyleBox["Complement",
+  FontWeight->"Bold"],
+ " vrne razliko mno\[ZHacek]ic ",
+ StyleBox["s1",
+  FontWeight->"Bold"],
+ " in ",
+ StyleBox["s2",
+  FontWeight->"Bold"],
+ ". \[CapitalCHacek]e je ",
+ StyleBox["s1",
+  FontWeight->"Bold"],
+ " univerzalna mno\[ZHacek]ica, dobimo operacijo komplement."
+}], "Text",
+ Evaluatable->False,
+ CellChangeTimes->{{3.408521673*^9, 3.408521745234375*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{"s1", "\[IndentingNewLine]", "s2", "\[IndentingNewLine]", 
+ RowBox[{"Complement", "[", 
+  RowBox[{"s1", ",", "s2"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.408521766609375*^9, 3.40852176890625*^9}, {
+  3.691463476847803*^9, 3.691463479617962*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"7", ",", "1", ",", "3", ",", "5"}], "}"}]], "Output",
+ CellChangeTimes->{{3.6914634663452024`*^9, 3.691463480154992*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"8", ",", "3", ",", "2"}], "}"}]], "Output",
+ CellChangeTimes->{{3.6914634663452024`*^9, 3.691463480161993*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"1", ",", "5", ",", "7"}], "}"}]], "Output",
+ CellChangeTimes->{{3.6914634663452024`*^9, 3.691463480168993*^9}}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Subsets", "Subsubsection",
+ CellChangeTimes->{{3.408553264390625*^9, 3.408553318671875*^9}, {
+  3.408553359828125*^9, 3.408553360578125*^9}}],
+
+Cell[TextData[{
+ StyleBox["Subsets[mno\[ZHacek]]",
+  FontWeight->"Bold"],
+ " vrne mno\[ZHacek]ico vseh podmno\[ZHacek]ic mno\[ZHacek]ice ",
+ StyleBox["mno\[ZHacek]",
+  FontWeight->"Bold"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.408553272890625*^9, 3.40855327759375*^9}, {
+  3.408553323578125*^9, 3.408553355578125*^9}, {3.691463508069589*^9, 
+  3.6914635255145864`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Subsets", "[", 
+  RowBox[{"{", 
+   RowBox[{"1", ",", "2", ",", "3"}], "}"}], "]"}]], "Input",
+ CellChangeTimes->{{3.40855337146875*^9, 3.4085533730625*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", "}"}], ",", 
+   RowBox[{"{", "1", "}"}], ",", 
+   RowBox[{"{", "2", "}"}], ",", 
+   RowBox[{"{", "3", "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "2", ",", "3"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.6914635309278965`*^9}]
+}, Open  ]],
+
+Cell[TextData[{
+ StyleBox["Subsets[mno\[ZHacek], n]",
+  FontWeight->"Bold"],
+ " vrne mno\[ZHacek]ico vseh podmno\[ZHacek]ic mno\[ZHacek]ice ",
+ StyleBox["mnoz",
+  FontWeight->"Bold"],
+ " z ",
+ StyleBox["n ",
+  FontWeight->"Bold"],
+ "ali manj elementi. \[CapitalCHacek]e namesto ",
+ StyleBox["n",
+  FontWeight->"Bold"],
+ " napi\[SHacek]emo ",
+ StyleBox["{n}",
+  FontWeight->"Bold"],
+ ", dobimo vse podmno\[ZHacek]ice z natanko ",
+ StyleBox["n",
+  FontWeight->"Bold"],
+ " elementi. \[CapitalCHacek]e namesto ",
+ StyleBox["n",
+  FontWeight->"Bold"],
+ " napi\[SHacek]emo  ",
+ StyleBox["{m, n}",
+  FontWeight->"Bold"],
+ ", pa dobimo vse podmno\[ZHacek]ice, ki imajo vsaj ",
+ StyleBox["m",
+  FontWeight->"Bold"],
+ ", a ne ve\[CHacek] kot ",
+ StyleBox["n",
+  FontWeight->"Bold"],
+ " elementov."
+}], "Text",
+ CellChangeTimes->{{3.408553388296875*^9, 3.408553415828125*^9}, {
+  3.408553462890625*^9, 3.40855353271875*^9}, {3.563893527374105*^9, 
+  3.5638935434109335`*^9}, {3.5648395110151396`*^9, 3.5648395115741715`*^9}, {
+  3.691463534646109*^9, 3.6914637726937246`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Subsets", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", "2", ",", "3"}], "}"}], ",", 
+   RowBox[{"{", "2", "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.408553227828125*^9, 3.40855325875*^9}, {
+  3.40855328878125*^9, 3.408553294140625*^9}, {3.408553449171875*^9, 
+  3.408553452421875*^9}, {3.408553517625*^9, 3.40855352*^9}, {
+  3.408553569890625*^9, 3.408553570078125*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "3"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.6914637811352077`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Subsets", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"A", ",", " ", "B", ",", " ", "C"}], "}"}], ",", " ", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", " ", "2"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.40855356353125*^9, 3.4085535905*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", "}"}], ",", 
+   RowBox[{"{", "A", "}"}], ",", 
+   RowBox[{"{", "B", "}"}], ",", 
+   RowBox[{"{", "C", "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"A", ",", "B"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"A", ",", "C"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"B", ",", "C"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.691463788294617*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["MemberQ[mnoz, x]", "Subsubsection",
+ CellChangeTimes->{{3.408553691734375*^9, 3.408553697328125*^9}}],
+
+Cell[TextData[{
+ StyleBox["MemberQ",
+  FontWeight->"Bold"],
+ " vrne ",
+ StyleBox["True",
+  FontWeight->"Bold"],
+ ", \[CHacek]e ",
+ StyleBox["x",
+  FontWeight->"Bold"],
+ " pripada mno\[ZHacek]ici ",
+ StyleBox["mnoz",
+  FontWeight->"Bold"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.40855373303125*^9, 3.408553752828125*^9}, {
+  3.691463818580349*^9, 3.691463826592808*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"MemberQ", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", "2", ",", "X"}], "}"}], ",", " ", "2"}], "]"}]], "Input",
+ CellChangeTimes->{{3.408553701015625*^9, 3.408553721453125*^9}, {
+  3.691463830745045*^9, 3.6914638313050776`*^9}}],
+
+Cell[BoxData["True"], "Output",
+ CellChangeTimes->{3.6914638339942307`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"MemberQ", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", "2", ",", "X"}], "}"}], ",", " ", "3"}], "]"}]], "Input",
+ CellChangeTimes->{{3.408553701015625*^9, 3.408553721453125*^9}, {
+  3.691463830745045*^9, 3.6914638391065235`*^9}}],
+
+Cell[BoxData["False"], "Output",
+ CellChangeTimes->{3.691463839689557*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["SubsetQ[s1,s2]", "Subsubsection",
+ CellChangeTimes->{{3.5346299116233187`*^9, 3.5346299500555167`*^9}}],
+
+Cell[TextData[{
+ StyleBox["SubsetQ",
+  FontWeight->"Bold"],
+ " vrne ",
+ StyleBox["True",
+  FontWeight->"Bold"],
+ ", \[CHacek]e je ",
+ StyleBox["s2",
+  FontWeight->"Bold"],
+ " podmno\[ZHacek]ica ",
+ StyleBox["s1",
+  FontWeight->"Bold"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.53462995641088*^9, 3.534630035879426*^9}, {
+  3.534630154616217*^9, 3.534630166295885*^9}, {3.6914639132027617`*^9, 
+  3.691463925207448*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"SubsetQ", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", "2", ",", "3"}], "}"}], ",", " ", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "2"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.40855360190625*^9, 3.408553626328125*^9}, {
+  3.691463887731304*^9, 3.6914638912265043`*^9}}],
+
+Cell[BoxData["True"], "Output",
+ CellChangeTimes->{3.6914638573455667`*^9, 3.6914638925065775`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"SubsetQ", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", "2", ",", "3"}], "}"}], ",", " ", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "4"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.40855360190625*^9, 3.408553626328125*^9}, {
+  3.691463887731304*^9, 3.6914639065943832`*^9}}],
+
+Cell[BoxData["False"], "Output",
+ CellChangeTimes->{3.6914639072714224`*^9}]
+}, Open  ]]
+}, Open  ]]
+}, Closed]]
+}, Open  ]]
+},
+WindowToolbars->{},
+WindowSize->{1400, 968},
+WindowMargins->{{-8, Automatic}, {Automatic, -8}},
+ShowSelection->True,
+ShowCellLabel->True,
+ShowCellTags->False,
+Magnification:>FEPrivate`If[
+  FEPrivate`Equal[FEPrivate`$VersionNumber, 6.], 2., 2. Inherited],
+FrontEndVersion->"11.0 for Microsoft Windows (32-bit) (September 21, 2016)",
+StyleDefinitions->FrontEnd`FileName[{"Creative"}, "NaturalColor.nb", 
+  CharacterEncoding -> "UTF-8"],
+PrivateNotebookOptions -> {"ColorPalette" -> {RGBColor, -1}},
+RenderingOptions -> {"ObjectDithering" -> True},
+RenderingOptions -> {"RasterDithering" -> False}
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[567, 22, 153, 2, 130, "Title"],
+Cell[723, 26, 327, 6, 76, "Subsubtitle"],
+Cell[CellGroupData[{
+Cell[1075, 36, 80, 2, 151, "Section",
+ Evaluatable->False],
+Cell[CellGroupData[{
+Cell[1180, 42, 80, 2, 73, "Subsection",
+ Evaluatable->False],
+Cell[1263, 46, 758, 20, 176, "Text",
+ Evaluatable->False],
+Cell[CellGroupData[{
+Cell[2046, 70, 150, 3, 81, "Input"],
+Cell[2199, 75, 125, 3, 81, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2361, 83, 50, 1, 81, "Input"],
+Cell[2414, 86, 127, 3, 81, "Output"]
+}, Open  ]],
+Cell[2556, 92, 258, 5, 98, "Text",
+ Evaluatable->False],
+Cell[CellGroupData[{
+Cell[2839, 101, 188, 3, 81, "Input"],
+Cell[3030, 106, 221, 5, 81, "Output"]
+}, Open  ]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[3300, 117, 107, 2, 53, "Subsection",
+ Evaluatable->False],
+Cell[CellGroupData[{
+Cell[3432, 123, 88, 2, 53, "Subsubsection",
+ Evaluatable->False],
+Cell[3523, 127, 229, 9, 61, "Text",
+ Evaluatable->False],
+Cell[CellGroupData[{
+Cell[3777, 140, 50, 1, 81, "Input"],
+Cell[3830, 143, 70, 1, 81, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3949, 150, 88, 2, 53, "Subsubsection",
+ Evaluatable->False],
+Cell[4040, 154, 451, 19, 61, "Text"],
+Cell[CellGroupData[{
+Cell[4516, 177, 234, 7, 114, "Input"],
+Cell[4753, 186, 74, 1, 81, "Output"],
+Cell[4830, 189, 74, 1, 81, "Output"]
+}, Open  ]],
+Cell[4919, 193, 662, 22, 137, "Text"],
+Cell[CellGroupData[{
+Cell[5606, 219, 631, 12, 160, "Input"],
+Cell[6240, 233, 273, 6, 81, "Output"],
+Cell[6516, 241, 119, 2, 81, "Output"],
+Cell[6638, 245, 119, 2, 81, "Output"]
+}, Open  ]],
+Cell[6772, 250, 179, 4, 60, "Text"],
+Cell[CellGroupData[{
+Cell[6976, 258, 131, 5, 114, "Input"],
+Cell[7110, 265, 246, 5, 81, "Output"],
+Cell[7359, 272, 143, 3, 81, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7539, 280, 198, 4, 81, "Input"],
+Cell[7740, 286, 147, 3, 81, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7936, 295, 87, 2, 53, "Subsubsection",
+ Evaluatable->False],
+Cell[8026, 299, 165, 8, 61, "Text",
+ Evaluatable->False],
+Cell[CellGroupData[{
+Cell[8216, 311, 49, 1, 81, "Input"],
+Cell[8268, 314, 92, 1, 81, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8409, 321, 154, 3, 53, "Subsubsection",
+ Evaluatable->False],
+Cell[8566, 326, 166, 8, 61, "Text",
+ Evaluatable->False],
+Cell[CellGroupData[{
+Cell[8757, 338, 48, 1, 81, "Input"],
+Cell[8808, 341, 94, 1, 81, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8951, 348, 86, 2, 53, "Subsubsection",
+ Evaluatable->False],
+Cell[9040, 352, 171, 8, 61, "Text",
+ Evaluatable->False],
+Cell[CellGroupData[{
+Cell[9236, 364, 167, 3, 81, "Input"],
+Cell[9406, 369, 187, 4, 81, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9642, 379, 88, 2, 53, "Subsubsection",
+ Evaluatable->False],
+Cell[9733, 383, 478, 21, 99, "Text",
+ Evaluatable->False],
+Cell[CellGroupData[{
+Cell[10236, 408, 141, 5, 114, "Input"],
+Cell[10380, 415, 139, 3, 81, "Output"],
+Cell[10522, 420, 141, 3, 81, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10712, 429, 131, 3, 53, "Subsubsection",
+ Evaluatable->False],
+Cell[10846, 434, 441, 18, 99, "Text",
+ Evaluatable->False],
+Cell[CellGroupData[{
+Cell[11312, 456, 241, 7, 114, "Input"],
+Cell[11556, 465, 149, 3, 81, "Output"],
+Cell[11708, 470, 149, 3, 81, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[11918, 480, 203, 4, 53, "Subsection",
+ Evaluatable->False],
+Cell[CellGroupData[{
+Cell[12146, 488, 166, 3, 53, "Subsubsection",
+ Evaluatable->False],
+Cell[12315, 493, 965, 35, 175, "Text",
+ Evaluatable->False],
+Cell[CellGroupData[{
+Cell[13305, 532, 419, 11, 180, "Input"],
+Cell[13727, 545, 315, 7, 81, "Output"],
+Cell[14045, 554, 271, 6, 81, "Output"],
+Cell[14319, 562, 179, 4, 81, "Output"],
+Cell[14501, 568, 190, 4, 81, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14740, 578, 174, 3, 53, "Subsubsection",
+ Evaluatable->False],
+Cell[14917, 583, 554, 21, 100, "Text",
+ Evaluatable->False],
+Cell[CellGroupData[{
+Cell[15496, 608, 234, 4, 81, "Input"],
+Cell[15733, 614, 410, 15, 110, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16180, 634, 245, 6, 81, "Input"],
+Cell[16428, 642, 167, 4, 81, "Output"]
+}, Open  ]],
+Cell[16610, 649, 224, 6, 60, "Text",
+ Evaluatable->False],
+Cell[CellGroupData[{
+Cell[16859, 659, 383, 6, 81, "Input"],
+Cell[17245, 667, 592, 15, 81, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[17874, 687, 156, 3, 81, "Input"],
+Cell[18033, 692, 700, 20, 207, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[18770, 717, 202, 4, 81, "Input"],
+Cell[18975, 723, 753, 20, 207, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[19765, 748, 474, 13, 81, "Input"],
+Cell[20242, 763, 1078, 35, 218, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[21369, 804, 514, 8, 53, "Subsubsection",
+ Evaluatable->False],
+Cell[21886, 814, 1752, 60, 137, "Text"],
+Cell[CellGroupData[{
+Cell[23663, 878, 219, 4, 81, "Input"],
+Cell[23885, 884, 238, 6, 81, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[24160, 895, 208, 5, 81, "Input"],
+Cell[24371, 902, 581, 19, 81, "Output"]
+}, Open  ]],
+Cell[24967, 924, 338, 9, 61, "Text",
+ Evaluatable->False],
+Cell[CellGroupData[{
+Cell[25330, 937, 191, 3, 81, "Input"],
+Cell[25524, 942, 753, 21, 207, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[26326, 969, 94, 2, 53, "Subsubsection",
+ Evaluatable->False],
+Cell[26423, 973, 260, 10, 61, "Text",
+ Evaluatable->False],
+Cell[CellGroupData[{
+Cell[26708, 987, 130, 2, 81, "Input"],
+Cell[26841, 991, 2017, 51, 199, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[28907, 1048, 106, 1, 53, "Subsubsection"],
+Cell[29016, 1051, 264, 9, 61, "Text"],
+Cell[CellGroupData[{
+Cell[29305, 1064, 129, 2, 81, "Input"],
+Cell[29437, 1068, 135, 3, 81, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[29609, 1076, 127, 2, 81, "Input"],
+Cell[29739, 1080, 115, 3, 81, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[29891, 1088, 127, 2, 81, "Input"],
+Cell[30021, 1092, 161, 4, 81, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[30243, 1103, 303, 5, 53, "Subsection",
+ Evaluatable->False],
+Cell[CellGroupData[{
+Cell[30571, 1112, 225, 5, 53, "Subsubsection",
+ Evaluatable->False],
+Cell[30799, 1119, 603, 23, 100, "Text",
+ Evaluatable->False],
+Cell[CellGroupData[{
+Cell[31427, 1146, 171, 3, 81, "Input"],
+Cell[31601, 1151, 212, 5, 81, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[31850, 1161, 153, 3, 81, "Input"],
+Cell[32006, 1166, 160, 4, 81, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[32215, 1176, 153, 2, 53, "Subsubsection"],
+Cell[32371, 1180, 386, 15, 61, "Text"],
+Cell[CellGroupData[{
+Cell[32782, 1199, 284, 7, 81, "Input"],
+Cell[33069, 1208, 140, 3, 81, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[33258, 1217, 98, 1, 53, "Subsubsection"],
+Cell[33359, 1220, 344, 12, 61, "Text"],
+Cell[CellGroupData[{
+Cell[33728, 1236, 209, 5, 81, "Input"],
+Cell[33940, 1243, 117, 3, 81, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[34106, 1252, 111, 1, 53, "Subsubsection"],
+Cell[34220, 1255, 400, 15, 61, "Text"],
+Cell[CellGroupData[{
+Cell[34645, 1274, 253, 6, 81, "Input"],
+Cell[34901, 1282, 127, 3, 81, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[35077, 1291, 89, 2, 53, "Subsubsection",
+ Evaluatable->False],
+Cell[35169, 1295, 154, 8, 61, "Text",
+ Evaluatable->False],
+Cell[CellGroupData[{
+Cell[35348, 1307, 51, 1, 81, "Input"],
+Cell[35402, 1310, 169, 3, 81, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[35620, 1319, 180, 3, 53, "Subsubsection",
+ Evaluatable->False],
+Cell[35803, 1324, 407, 18, 61, "Text",
+ Evaluatable->False],
+Cell[CellGroupData[{
+Cell[36235, 1346, 257, 7, 114, "Input"],
+Cell[36495, 1355, 198, 4, 81, "Output"],
+Cell[36696, 1361, 198, 4, 81, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[36943, 1371, 162, 3, 53, "Subsubsection",
+ Evaluatable->False],
+Cell[37108, 1376, 295, 7, 198, "Text",
+ Evaluatable->False],
+Cell[CellGroupData[{
+Cell[37428, 1387, 107, 2, 162, "Input"],
+Cell[37538, 1391, 181, 5, 212, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[37768, 1402, 263, 5, 37, "Subsubsection",
+ Evaluatable->False],
+Cell[38034, 1409, 1013, 26, 200, "Text",
+ Evaluatable->False],
+Cell[CellGroupData[{
+Cell[39072, 1439, 439, 9, 278, "Input"],
+Cell[39514, 1450, 169, 3, 212, "Output"],
+Cell[39686, 1455, 235, 7, 212, "Output"]
+}, Open  ]],
+Cell[39936, 1465, 308, 8, 122, "Text",
+ Evaluatable->False],
+Cell[CellGroupData[{
+Cell[40269, 1477, 175, 3, 212, "Input"],
+Cell[40447, 1482, 355, 11, 212, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[40839, 1498, 177, 3, 212, "Input"],
+Cell[41019, 1503, 235, 7, 212, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[41303, 1516, 136, 3, 37, "Subsubsection",
+ Evaluatable->False],
+Cell[41442, 1521, 1040, 31, 352, "Text",
+ Evaluatable->False],
+Cell[CellGroupData[{
+Cell[42507, 1556, 285, 4, 212, "Input"],
+Cell[42795, 1562, 506, 14, 212, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[43338, 1581, 158, 3, 212, "Input"],
+Cell[43499, 1586, 279, 7, 212, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[43815, 1598, 181, 3, 212, "Input"],
+Cell[43999, 1603, 243, 6, 212, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[44291, 1615, 131, 3, 37, "Subsubsection",
+ Evaluatable->False],
+Cell[44425, 1620, 910, 28, 352, "Text",
+ Evaluatable->False],
+Cell[CellGroupData[{
+Cell[45360, 1652, 134, 2, 212, "Input"],
+Cell[45497, 1656, 205, 5, 212, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[45739, 1666, 126, 2, 212, "Input"],
+Cell[45868, 1670, 205, 5, 212, "Output"]
+}, Open  ]],
+Cell[46088, 1678, 357, 9, 198, "Text",
+ Evaluatable->False],
+Cell[CellGroupData[{
+Cell[46470, 1691, 217, 6, 278, "Input"],
+Cell[46690, 1699, 229, 5, 212, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[46968, 1710, 133, 3, 37, "Subsubsection",
+ Evaluatable->False],
+Cell[47104, 1715, 548, 18, 198, "Text",
+ Evaluatable->False]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[47689, 1738, 120, 1, 37, "Subsubsection"],
+Cell[47812, 1741, 461, 13, 198, "Text",
+ Evaluatable->False],
+Cell[48276, 1756, 233, 4, 162, "Input"],
+Cell[CellGroupData[{
+Cell[48534, 1764, 183, 4, 162, "Input"],
+Cell[48720, 1770, 381, 7, 292, "Output"]
+}, Open  ]],
+Cell[49116, 1780, 304, 8, 122, "Text"],
+Cell[49423, 1790, 262, 5, 212, "Input"],
+Cell[CellGroupData[{
+Cell[49710, 1799, 161, 2, 212, "Input"],
+Cell[49874, 1803, 73, 1, 212, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[49984, 1809, 162, 2, 212, "Input"],
+Cell[50149, 1813, 74, 1, 212, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[50260, 1819, 163, 2, 212, "Input"],
+Cell[50426, 1823, 73, 1, 212, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[50548, 1830, 123, 1, 37, "Subsubsection"],
+Cell[50674, 1833, 662, 16, 137, "Text"],
+Cell[51339, 1851, 455, 11, 121, "Input"],
+Cell[CellGroupData[{
+Cell[51819, 1866, 131, 2, 81, "Input"],
+Cell[51953, 1870, 121, 2, 106, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[52111, 1877, 182, 3, 81, "Input"],
+Cell[52296, 1882, 98, 1, 106, "Output"]
+}, Open  ]],
+Cell[52409, 1886, 574, 17, 139, "Text"],
+Cell[52986, 1905, 255, 6, 81, "Input"],
+Cell[CellGroupData[{
+Cell[53266, 1915, 132, 2, 81, "Input"],
+Cell[53401, 1919, 140, 3, 106, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[53578, 1927, 133, 2, 81, "Input"],
+Cell[53714, 1931, 152, 3, 106, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[53903, 1939, 131, 2, 81, "Input"],
+Cell[54037, 1943, 161, 3, 106, "Output"]
+}, Open  ]],
+Cell[54213, 1949, 245, 5, 81, "Input"],
+Cell[CellGroupData[{
+Cell[54483, 1958, 150, 2, 81, "Input"],
+Cell[54636, 1962, 92, 1, 106, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[54765, 1968, 152, 2, 81, "Input"],
+Cell[54920, 1972, 72, 1, 212, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[55029, 1978, 152, 2, 71, "Input"],
+Cell[55184, 1982, 70, 1, 212, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[55291, 1988, 153, 2, 71, "Input"],
+Cell[55447, 1992, 91, 1, 106, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[55599, 2000, 119, 1, 53, "Subsection"],
+Cell[CellGroupData[{
+Cell[55743, 2005, 130, 3, 53, "Subsubsection",
+ Evaluatable->False],
+Cell[55876, 2010, 470, 17, 61, "Text",
+ Evaluatable->False],
+Cell[CellGroupData[{
+Cell[56371, 2031, 264, 6, 81, "Input"],
+Cell[56638, 2039, 273, 7, 81, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[56948, 2051, 232, 4, 81, "Input"],
+Cell[57183, 2057, 151, 3, 81, "Output"]
+}, Open  ]],
+Cell[57349, 2063, 234, 9, 61, "Text"],
+Cell[CellGroupData[{
+Cell[57608, 2076, 283, 6, 81, "Input"],
+Cell[57894, 2084, 253, 7, 81, "Output"]
+}, Open  ]],
+Cell[58162, 2094, 445, 16, 100, "Text"],
+Cell[CellGroupData[{
+Cell[58632, 2114, 175, 4, 81, "Input"],
+Cell[58810, 2120, 188, 5, 81, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[59047, 2131, 134, 3, 37, "Subsubsection",
+ Evaluatable->False],
+Cell[59184, 2136, 436, 14, 61, "Text",
+ Evaluatable->False],
+Cell[CellGroupData[{
+Cell[59645, 2154, 179, 3, 81, "Input"],
+Cell[59827, 2159, 133, 2, 212, "Output"]
+}, Open  ]],
+Cell[59975, 2164, 284, 10, 51, "Text"],
+Cell[CellGroupData[{
+Cell[60284, 2178, 188, 4, 81, "Input"],
+Cell[60475, 2184, 73, 1, 212, "Output"]
+}, Open  ]],
+Cell[60563, 2188, 474, 17, 90, "Text"],
+Cell[CellGroupData[{
+Cell[61062, 2209, 180, 4, 81, "Input"],
+Cell[61245, 2215, 127, 3, 212, "Output"]
+}, Open  ]],
+Cell[61387, 2221, 324, 10, 51, "Text"],
+Cell[61714, 2233, 139, 2, 81, "Input"],
+Cell[CellGroupData[{
+Cell[61878, 2239, 229, 6, 81, "Input"],
+Cell[62110, 2247, 163, 4, 212, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Closed]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[62346, 2259, 266, 3, 151, "Section"],
+Cell[62615, 2264, 1560, 32, 291, "Text"],
+Cell[CellGroupData[{
+Cell[64200, 2300, 856, 22, 199, "Input"],
+Cell[65059, 2324, 226, 6, 86, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[65322, 2335, 1102, 32, 199, "Input"],
+Cell[66427, 2369, 349, 12, 81, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[66813, 2386, 96, 1, 53, "Subsubsection"],
+Cell[66912, 2389, 189, 4, 60, "Text"],
+Cell[CellGroupData[{
+Cell[67126, 2397, 317, 9, 81, "Input"],
+Cell[67446, 2408, 228, 5, 81, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[67711, 2418, 156, 3, 81, "Input"],
+Cell[67870, 2423, 879, 25, 121, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[68810, 2455, 124, 2, 87, "Section"],
+Cell[68937, 2459, 331, 7, 98, "Text",
+ Evaluatable->False],
+Cell[CellGroupData[{
+Cell[69293, 2470, 160, 3, 53, "Subsubsection",
+ Evaluatable->False],
+Cell[69456, 2475, 568, 18, 137, "Text",
+ Evaluatable->False],
+Cell[CellGroupData[{
+Cell[70049, 2497, 385, 11, 160, "Input"],
+Cell[70437, 2510, 209, 5, 81, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[70683, 2520, 237, 4, 81, "Input"],
+Cell[70923, 2526, 177, 4, 81, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[71149, 2536, 98, 2, 53, "Subsubsection",
+ Evaluatable->False],
+Cell[71250, 2540, 290, 12, 61, "Text",
+ Evaluatable->False],
+Cell[CellGroupData[{
+Cell[71565, 2556, 214, 3, 160, "Input"],
+Cell[71782, 2561, 135, 3, 212, "Output"],
+Cell[71920, 2566, 125, 3, 212, "Output"],
+Cell[72048, 2571, 94, 2, 212, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[72191, 2579, 138, 3, 106, "Subsubsection",
+ Evaluatable->False],
+Cell[72332, 2584, 405, 15, 198, "Text",
+ Evaluatable->False],
+Cell[CellGroupData[{
+Cell[72762, 2603, 262, 4, 370, "Input"],
+Cell[73027, 2609, 161, 3, 212, "Output"],
+Cell[73191, 2614, 151, 3, 212, "Output"],
+Cell[73345, 2619, 151, 3, 212, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[73545, 2628, 147, 2, 106, "Subsubsection"],
+Cell[73695, 2632, 370, 10, 122, "Text"],
+Cell[CellGroupData[{
+Cell[74090, 2646, 180, 4, 212, "Input"],
+Cell[74273, 2652, 474, 15, 212, "Output"]
+}, Open  ]],
+Cell[74762, 2670, 1065, 35, 278, "Text"],
+Cell[CellGroupData[{
+Cell[75852, 2709, 410, 9, 212, "Input"],
+Cell[76265, 2720, 274, 9, 212, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[76576, 2734, 271, 7, 81, "Input"],
+Cell[76850, 2743, 403, 13, 81, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[77302, 2762, 107, 1, 53, "Subsubsection"],
+Cell[77412, 2765, 369, 15, 61, "Text"],
+Cell[CellGroupData[{
+Cell[77806, 2784, 264, 6, 81, "Input"],
+Cell[78073, 2792, 75, 1, 81, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[78185, 2798, 264, 6, 81, "Input"],
+Cell[78452, 2806, 74, 1, 81, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[78575, 2813, 109, 1, 53, "Subsubsection"],
+Cell[78687, 2816, 417, 16, 61, "Text"],
+Cell[CellGroupData[{
+Cell[79129, 2836, 312, 8, 81, "Input"],
+Cell[79444, 2846, 99, 1, 81, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[79580, 2852, 312, 8, 81, "Input"],
+Cell[79895, 2862, 76, 1, 81, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Closed]]
+}, Open  ]]
+}
+]
+*)
+
