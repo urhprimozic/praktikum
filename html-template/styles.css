@@ -1,0 +1,70 @@
+body {
+    background-image: url("jure.jpeg");
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20pt;
+    text-align: right;
+    color: darkorange;
+}
+p {
+    text-align: justify;
+    text-indent: 10px;
+}
+table{
+    font-size: 20px;
+    border-spacing: 0ch;
+    border: 1px solid brown;
+    float: right;
+}
+h1, h2 {
+    font-family: 'Courier New', Courier, monospace;
+    color: firebrick;
+    font-style: italic;
+    text-decoration:  underline;
+    margin-top: 0%;
+    background-color: #aef088;
+}
+h1 {
+    text-decoration: overline underline;
+    margin: 0%;
+}
+h1:hover {
+    text-decoration: dashed;
+    color: royalblue;
+}
+img {
+    float: right;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    height: auto;
+}
+
+a:hover {
+    color: red;
+    font-size: 50px;
+}
+a {
+    background-color: azure;
+}
+
+td:hover {background-color: #aef088;}
+td {
+    background-color: blueviolet;
+}
+
+.explanation {
+    text-indent: 20%;
+    margin-bottom: 0cm;
+    margin-top: 0;
+    color: white;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    background-color: black;
+    text-align: center;
+}
+.tobottom {
+    position: absolute;
+    bottom: 10px;
+    width: 50%;
+    border: 3px solid #8AC007;
+}
